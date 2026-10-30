@@ -1,0 +1,27 @@
+# KIXIMA Marketplace — AMBIENTE DE TESTE ISOLADO: o frontend sozinho, com uma API simulada (sem backend real).
+# O build leva um aviso visível em todos os ecrãs (VITE_AMBIENTE_TESTE=1); o build de produção (Dockerfile) nunca o tem.
+# Um só contentor: nginx (o mesmo da produção) + o simulador da API em localhost:4100.
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+ENV VITE_AMBIENTE_TESTE=1
+RUN npm run build
+
+FROM nginx:1.27-alpine
+RUN apk add --no-cache nodejs
+COPY deploy/templates/ /etc/nginx/templates/
+COPY --from=build /app/dist /usr/share/nginx/html
+# Simulador e respostas reais capturadas do backend (as fixtures dos testes).
+COPY teste-isolado/api-simulada.mjs /app/api-simulada.mjs
+COPY src/test/fixtures /app/fixtures
+ENV NGINX_ENVSUBST_FILTER="^(PORT|BACKEND_ORIGIN|BACKEND_HOST|REAL_IP_EXTRA|ORIGEM_SEGREDO|NGINX_LOCAL_RESOLVERS)$" \
+    PORT=10000 \
+    REAL_IP_EXTRA=127.0.0.1 \
+    BACKEND_HOSTPORT=127.0.0.1:4100 \
+    FIXTURES_DIR=/app/fixtures
+COPY deploy/10-ambiente-backend.envsh /docker-entrypoint.d/10-ambiente-backend.envsh
+COPY teste-isolado/30-simulador.sh /docker-entrypoint.d/30-simulador.sh
+RUN chmod +x /docker-entrypoint.d/10-ambiente-backend.envsh /docker-entrypoint.d/30-simulador.sh
+EXPOSE 10000

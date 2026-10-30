@@ -8,6 +8,11 @@ independente do `kixima-frontend-java` (que serve só de referência e não é a
 > backend Java real (`docs/API-USADA.md` lista cada endpoint, permissão, erro e dependência em falta). O catálogo do
 > sistema de design (Fase 3) está em `/design`, só em desenvolvimento.
 
+## Testar o frontend sozinho (sem backend)
+
+O frontend pode ser experimentado isoladamente, com uma API simulada e um aviso visível («Ambiente de teste isolado»): ver
+[`docs/TESTE-ISOLADO.md`](docs/TESTE-ISOLADO.md) (`npm run simulador`, `render.teste.yaml`, roteiro de teste por papel).
+
 ## Homepage e catálogo públicos
 
 Qualquer visitante, sem conta, abre a homepage, pesquisa, filtra, vê categorias, serviços, fornecedoras verificadas e a ficha

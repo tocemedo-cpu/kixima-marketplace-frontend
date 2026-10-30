@@ -87,3 +87,7 @@
 @media (max-width: 480px) {
   .kx-footer__inner { grid-template-columns: 1fr; }
 }
+
+/* Aviso do ambiente de teste isolado (só no build de teste). Fica acima da barra superior. */
+.kx-aviso-teste { background: var(--kx-warning-bg); color: var(--kx-text); border-bottom: 1px solid var(--kx-warning-line); padding: .4rem var(--kx-space-4); font-size: var(--kx-text-sm); text-align: center; }
+.kx-aviso-teste strong { color: var(--kx-warning); }

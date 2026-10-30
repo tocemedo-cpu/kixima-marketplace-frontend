@@ -1,0 +1,17 @@
+# KIXIMA Marketplace — Blueprint do AMBIENTE DE TESTE ISOLADO no Render: o frontend sozinho, com API simulada.
+# Para o criar: Render → New → Blueprint → este repositório → em "Blueprint file path" escreva render.teste.yaml.
+# É independente do render.yaml de produção (que liga ao backend Java real) e pode ser apagado quando acabar de testar.
+# Guia: docs/TESTE-ISOLADO.md
+services:
+  - type: web
+    name: kixima-marketplace-teste
+    runtime: docker
+    dockerfilePath: ./Dockerfile.teste
+    dockerContext: .
+    region: frankfurt
+    plan: free                  # dorme após inatividade (o primeiro pedido demora); chega para testar
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: DEMO_SENHA         # palavra-passe de demonstração dos utilizadores de teste (escolha uma; não fica no repositório)
+        sync: false
