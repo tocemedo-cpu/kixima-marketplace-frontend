@@ -1,0 +1,57 @@
+{
+ "kpis": {
+  "pagamentosPendentes": 2394000,
+  "pagamentosPendentesCount": 1,
+  "faturasRecebidas": 6,
+  "pagosMes": 9929400,
+  "aprovacoesPendentes": 1,
+  "aVencer7": 1
+ },
+ "series": [
+  {
+   "label": "mai.",
+   "faturas": 0,
+   "pagamentos": 0
+  },
+  {
+   "label": "jun.",
+   "faturas": 0,
+   "pagamentos": 0
+  },
+  {
+   "label": "jul.",
+   "faturas": 0,
+   "pagamentos": 0
+  },
+  {
+   "label": "ago.",
+   "faturas": 0,
+   "pagamentos": 0
+  },
+  {
+   "label": "set.",
+   "faturas": 0,
+   "pagamentos": 0
+  },
+  {
+   "label": "out.",
+   "faturas": 12323400,
+   "pagamentos": 9929400
+  }
+ ],
+ "pendentes": [
+  {
+   "id": "cdebddfa-caac-449d-94b9-5bf73708a90e",
+   "reference": "FAT-2026-00001",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "poReference": "PO-2026-00002",
+   "poId": "3ad0b9e0-ff95-406c-b597-e3830313fae9",
+   "amount": 2394000,
+   "currency": "AOA",
+   "status": "PENDENTE",
+   "issuedAt": "2026-10-21T10:41:49.331Z",
+   "dueAt": "2026-10-31T10:41:49.331Z",
+   "paidAt": null
+  }
+ ]
+}

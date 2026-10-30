@@ -1,0 +1,70 @@
+{
+ "kpis": {
+  "aReceber": 1,
+  "recebidos": 1,
+  "divergencia": 1,
+  "total": 3
+ },
+ "items": [
+  {
+   "id": "f22af773-61df-45b5-95e8-aee69b872d77:e70d2b9f-7c16-44d7-9d88-8a7c63d7d02d",
+   "poId": "f22af773-61df-45b5-95e8-aee69b872d77",
+   "reference": "PO-2026-00007",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "item": "Transporte de Carga Industrial",
+   "sku": null,
+   "quantity": 2,
+   "receivedAt": "2026-10-27T10:41:49.370Z",
+   "status": "DIVERGENCIA",
+   "receptionStatus": "Com Divergência"
+  },
+  {
+   "id": "5493d89b-5a2a-4963-9caa-7980dc747eb0:0c259784-90bf-40a8-b3fe-821aaa68af6a",
+   "poId": "5493d89b-5a2a-4963-9caa-7980dc747eb0",
+   "reference": "PO-2026-00006",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "item": "Ensaios não Destrutivos (NDT)",
+   "sku": null,
+   "quantity": 1,
+   "receivedAt": "2026-10-27T10:41:49.361Z",
+   "status": "RECEBIDO",
+   "receptionStatus": "Conforme"
+  },
+  {
+   "id": "481b8680-4232-4377-994f-8ba1d69bdff2:ba598aeb-f07f-4580-bf23-359b4f2b3aef",
+   "poId": "481b8680-4232-4377-994f-8ba1d69bdff2",
+   "reference": "PO-2026-00005",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "item": "Inspeção por Ultrassom (UT)",
+   "sku": null,
+   "quantity": 1,
+   "receivedAt": null,
+   "status": "A_RECEBER",
+   "receptionStatus": null
+  }
+ ]
+}

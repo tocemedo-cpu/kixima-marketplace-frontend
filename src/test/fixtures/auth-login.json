@@ -1,0 +1,16 @@
+{
+  "mfaPendente": false,
+  "mfaRestrita": false,
+  "mfaPrazo": null,
+  "user": {
+    "id": "2d697b96-a281-4137-aa51-9bbccdd521aa",
+    "name": "Ana Comprador",
+    "email": "comprador@petroangola.co.ao",
+    "role": "COMPRADOR",
+    "adminAreas": [],
+    "companyId": "eb5307c8-598d-4e90-8911-66b3f822048a",
+    "companyName": "Petro Angola Operações, Lda",
+    "companyType": "CLIENTE",
+    "avatarUrl": null
+  }
+}

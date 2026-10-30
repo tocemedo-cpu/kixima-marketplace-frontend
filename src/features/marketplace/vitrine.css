@@ -1,0 +1,83 @@
+/* KIXIMA Marketplace — homepage comercial (vitrine). Só lê tokens --kx-*. */
+
+/* ---------- Hero: categorias · mensagem · cotação ---------- */
+.kx-vit-hero { background: var(--kx-bg); padding-block: var(--kx-space-4); border-bottom: 1px solid var(--kx-line); }
+.kx-vit-hero__grade { display: grid; gap: var(--kx-space-4); grid-template-columns: 230px minmax(0, 1fr) 270px; align-items: stretch; }
+.kx-vit-trilho { background: var(--kx-surface); border: 1px solid var(--kx-line); border-radius: var(--kx-radius-lg); padding: var(--kx-space-3) 0; font-size: var(--kx-text-sm); }
+.kx-vit-trilho__titulo { margin: 0; padding: 0 var(--kx-space-4) var(--kx-space-2); font-family: var(--kx-font-mono); font-size: var(--kx-text-xs); letter-spacing: .1em; text-transform: uppercase; color: var(--kx-text-muted); }
+.kx-vit-trilho ul { list-style: none; margin: 0; padding: 0; }
+.kx-vit-trilho a { display: flex; justify-content: space-between; align-items: center; gap: .5rem; min-height: 40px; padding: 0 var(--kx-space-4); color: var(--kx-text); text-decoration: none; border-top: 1px solid var(--kx-line); }
+.kx-vit-trilho li:first-child a { border-top: 0; }
+.kx-vit-trilho a:hover { background: var(--kx-hover); color: var(--kx-brand); }
+.kx-vit-trilho__n { color: var(--kx-text-muted); font-size: var(--kx-text-xs); }
+.kx-vit-trilho__todas { color: var(--kx-brand) !important; font-weight: 600; }
+
+.kx-vit-banner { background: var(--kx-shell); color: var(--kx-shell-text); border-radius: var(--kx-radius-lg); padding: clamp(1.25rem, 3vw, 2.25rem); display: flex; flex-direction: column; justify-content: center; gap: var(--kx-space-3); position: relative; overflow: hidden; }
+.kx-vit-banner::after { content: ''; position: absolute; inset: auto 0 0 0; height: 4px; background: var(--kx-samakaka); }
+.kx-vit-banner h1 { color: var(--kx-shell-text); font-size: clamp(1.6rem, 1.1rem + 2vw, 2.6rem); max-width: 22ch; margin: 0; }
+.kx-vit-banner__texto { margin: 0; color: var(--kx-shell-muted); max-width: 52ch; }
+.kx-vit-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.kx-vit-chips li { border: 1px solid var(--kx-shell-line); border-radius: var(--kx-radius-pill); padding: .15rem .75rem; font-size: var(--kx-text-sm); color: var(--kx-shell-text); }
+
+.kx-vit-rfq { background: var(--kx-surface); border: 1px solid var(--kx-line); border-radius: var(--kx-radius-lg); padding: var(--kx-space-4); display: flex; flex-direction: column; gap: var(--kx-space-3); }
+.kx-vit-rfq h2 { margin: 0; font-size: var(--kx-text-xl); }
+.kx-vit-rfq ol { margin: 0; padding-left: 1.2rem; display: grid; gap: .35rem; color: var(--kx-text-muted); font-size: var(--kx-text-sm); }
+.kx-vit-rfq .kx-btn { margin-top: auto; }
+.kx-vit-rfq__nota { margin: 0; font-size: var(--kx-text-xs); color: var(--kx-text-muted); }
+
+/* ---------- Secções ---------- */
+.kx-vit-seccao { margin-top: var(--kx-space-6); }
+.kx-vit-sub { margin: 0; color: var(--kx-text-muted); font-size: var(--kx-text-sm); }
+
+.kx-vit-categorias { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--kx-space-3); grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.kx-vit-categoria { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: var(--kx-space-3); align-items: center; padding: var(--kx-space-3); background: var(--kx-surface); border: 1px solid var(--kx-line); border-radius: var(--kx-radius-lg); color: var(--kx-text); text-decoration: none; min-height: 96px; }
+.kx-vit-categoria:hover { border-color: var(--kx-brand); }
+.kx-vit-categoria img, .kx-vit-categoria__icone { width: 72px; height: 72px; border-radius: var(--kx-radius); object-fit: cover; background: var(--kx-surface-2); }
+.kx-vit-categoria__icone { display: grid; place-items: center; color: var(--kx-text-muted); }
+.kx-vit-categoria strong { display: block; overflow-wrap: anywhere; }
+.kx-vit-categoria small { color: var(--kx-text-muted); }
+
+.kx-vit-grade { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.kx-vit-carrossel { list-style: none; margin: 0; padding: 0 0 var(--kx-space-2); display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 24%); gap: var(--kx-space-3); overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; }
+.kx-vit-carrossel > li { scroll-snap-align: start; }
+
+.kx-vit-faixa { margin-top: var(--kx-space-6); background: var(--kx-shell); color: var(--kx-shell-text); padding-block: var(--kx-space-5); }
+.kx-vit-faixa__interior { display: flex; align-items: center; justify-content: space-between; gap: var(--kx-space-4); flex-wrap: wrap; }
+.kx-vit-faixa h2 { color: var(--kx-shell-text); margin: 0 0 var(--kx-space-2); font-size: var(--kx-text-2xl); max-width: 32ch; }
+.kx-vit-passos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; color: var(--kx-shell-muted); font-size: var(--kx-text-sm); counter-reset: p; }
+.kx-vit-passos li::before { counter-increment: p; content: counter(p) '. '; color: var(--kx-shell-text); font-weight: 700; }
+
+.kx-vit-vantagens { list-style: none; margin: 0 0 var(--kx-space-4); padding: 0; display: grid; gap: var(--kx-space-3); grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.kx-vit-vantagens li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--kx-space-3); padding: var(--kx-space-4); background: var(--kx-surface); border: 1px solid var(--kx-line); border-radius: var(--kx-radius-lg); }
+.kx-vit-vantagens h3 { margin: 0 0 .2rem; font-size: var(--kx-text-md); }
+.kx-vit-vantagens p { margin: 0; color: var(--kx-text-muted); font-size: var(--kx-text-sm); }
+.kx-vit-certs { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; color: var(--kx-text-muted); font-size: var(--kx-text-sm); }
+
+/* ---------- Cartão comercial: especificações e botão ---------- */
+.kx-produto__specs { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem; }
+.kx-produto__specs li { background: var(--kx-surface-2); border-radius: var(--kx-radius-sm, 4px); padding: 0 .45rem; font-size: var(--kx-text-xs); color: var(--kx-text); }
+.kx-produto__min { margin: 0; font-size: var(--kx-text-xs); color: var(--kx-text-muted); }
+.kx-produto__detalhes { margin-top: var(--kx-space-2); justify-self: stretch; text-align: center; pointer-events: none; }
+
+.kx-ficha__visitante { display: grid; gap: var(--kx-space-2); }
+.kx-ficha__nota { margin: 0; color: var(--kx-text-muted); font-size: var(--kx-text-sm); }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1199px) {
+  .kx-vit-hero__grade { grid-template-columns: minmax(0, 1fr) 270px; }
+  .kx-vit-trilho { display: none; }
+  .kx-vit-grade { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .kx-vit-vantagens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kx-vit-categorias { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .kx-vit-hero__grade { grid-template-columns: 1fr; }
+  .kx-vit-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--kx-space-3); }
+  .kx-vit-vantagens { grid-template-columns: 1fr; }
+  .kx-vit-carrossel { grid-auto-columns: minmax(200px, 62%); }
+  .kx-vit-categoria { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  .kx-vit-faixa__interior .kx-btn { width: 100%; }
+}
+@media (max-width: 479px) {
+  .kx-vit-categorias { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

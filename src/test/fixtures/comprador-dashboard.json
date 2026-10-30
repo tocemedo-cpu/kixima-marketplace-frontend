@@ -1,0 +1,36 @@
+{
+ "kpis": {
+  "emAndamento": 5,
+  "aguardandoPagamento": {
+   "count": 1,
+   "total": 2100000
+  },
+  "emEntrega": {
+   "count": 2,
+   "total": 5900000
+  },
+  "recebidasMes": 2
+ },
+ "minhasOrdens": [
+  {
+   "label": "Aguardando Pagamento",
+   "count": 1
+  },
+  {
+   "label": "Em Execução",
+   "count": 1
+  },
+  {
+   "label": "Em Entrega",
+   "count": 1
+  },
+  {
+   "label": "Recebidas",
+   "count": 2
+  },
+  {
+   "label": "Canceladas",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,148 @@
+{
+ "kpis": {
+  "aPagar": 2394000,
+  "concluidos": 9929400,
+  "atrasados": 0,
+  "totalPO": 10810000
+ },
+ "items": [
+  {
+   "id": "d637165d-9dbb-45d5-abca-e5772ce0aed8",
+   "poId": "f22af773-61df-45b5-95e8-aee69b872d77",
+   "reference": "PO-2026-00007",
+   "invoiceRef": "FAT-2026-00006",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "poDate": "2026-10-18T10:41:49.370Z",
+   "dueAt": "2026-10-31T10:41:49.373Z",
+   "amount": 1094400,
+   "paid": 1094400,
+   "open": 0,
+   "status": "PAGA",
+   "currency": "AOA",
+   "origin": "Gerada a partir do Checkout"
+  },
+  {
+   "id": "2b257e6d-3f6d-4433-ab6a-77c22b8fed32",
+   "poId": "5493d89b-5a2a-4963-9caa-7980dc747eb0",
+   "reference": "PO-2026-00006",
+   "invoiceRef": "FAT-2026-00005",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "poDate": "2026-10-18T10:41:49.361Z",
+   "dueAt": "2026-10-31T10:41:49.365Z",
+   "amount": 1425000,
+   "paid": 1425000,
+   "open": 0,
+   "status": "PAGA",
+   "currency": "AOA",
+   "origin": "Gerada a partir do Checkout"
+  },
+  {
+   "id": "91492304-d99e-4eb2-8b76-a8c9c6e4df68",
+   "poId": "481b8680-4232-4377-994f-8ba1d69bdff2",
+   "reference": "PO-2026-00005",
+   "invoiceRef": "FAT-2026-00004",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "poDate": "2026-10-18T10:41:49.353Z",
+   "dueAt": "2026-10-31T10:41:49.357Z",
+   "amount": 1083000,
+   "paid": 1083000,
+   "open": 0,
+   "status": "PAGA",
+   "currency": "AOA",
+   "origin": "Gerada a partir do Checkout"
+  },
+  {
+   "id": "0df24843-210b-4c45-9ec4-ae36faf58411",
+   "poId": "7d2b7048-503d-40ea-8d30-40451bffab9f",
+   "reference": "PO-2026-00004",
+   "invoiceRef": "FAT-2026-00003",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "poDate": "2026-10-18T10:41:49.344Z",
+   "dueAt": "2026-10-31T10:41:49.348Z",
+   "amount": 5643000,
+   "paid": 5643000,
+   "open": 0,
+   "status": "PAGA",
+   "currency": "AOA",
+   "origin": "Gerada a partir do Checkout"
+  },
+  {
+   "id": "ad563720-019c-45fe-8253-b162470ec153",
+   "poId": "eee77687-ee6b-4455-8efc-6e6f03fe6d71",
+   "reference": "PO-2026-00003",
+   "invoiceRef": "FAT-2026-00002",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "poDate": "2026-10-18T10:41:49.335Z",
+   "dueAt": "2026-10-31T10:41:49.339Z",
+   "amount": 684000,
+   "paid": 684000,
+   "open": 0,
+   "status": "PAGA",
+   "currency": "AOA",
+   "origin": "Gerada a partir do Checkout"
+  },
+  {
+   "id": "cdebddfa-caac-449d-94b9-5bf73708a90e",
+   "poId": "3ad0b9e0-ff95-406c-b597-e3830313fae9",
+   "reference": "PO-2026-00002",
+   "invoiceRef": "FAT-2026-00001",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "poDate": "2026-10-18T10:41:49.328Z",
+   "dueAt": "2026-10-31T10:41:49.331Z",
+   "amount": 2394000,
+   "paid": 0,
+   "open": 2394000,
+   "status": "PENDENTE",
+   "currency": "AOA",
+   "origin": "Gerada a partir do Checkout"
+  }
+ ]
+}

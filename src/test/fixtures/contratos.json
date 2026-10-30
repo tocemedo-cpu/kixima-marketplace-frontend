@@ -1,0 +1,83 @@
+[
+ {
+  "id": "ea1f3c0a-a14e-4f8f-9c8f-e9a0e1f6c5a1",
+  "reference": "CTR-2026-0001",
+  "clientCompanyId": "eb5307c8-598d-4e90-8911-66b3f822048a",
+  "supplierCompanyId": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+  "categoriesCovered": [
+   "Inspeção & Ensaios"
+  ],
+  "totalValue": "15300000",
+  "currency": "AOA",
+  "usedValue": "4200000",
+  "billingPeriodicity": "TRIMESTRAL",
+  "paymentTermDays": 30,
+  "status": "ATIVO",
+  "validFrom": "2026-06-30T10:41:49.382Z",
+  "validUntil": "2027-06-25T10:41:49.382Z",
+  "createdAt": "2026-10-28T10:41:49.383Z",
+  "updatedAt": "2026-10-28T10:41:49.383Z",
+  "clientCompany": {
+   "id": "eb5307c8-598d-4e90-8911-66b3f822048a",
+   "name": "Petro Angola Operações, Lda"
+  },
+  "supplierCompany": {
+   "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+   "name": "Fornecedora Industrial Kianda, Lda"
+  }
+ },
+ {
+  "id": "b8101bea-f8d9-4e7d-9f2f-e008ec6b89f8",
+  "reference": "CTR-2026-0002",
+  "clientCompanyId": "eb5307c8-598d-4e90-8911-66b3f822048a",
+  "supplierCompanyId": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+  "categoriesCovered": [
+   "Equipamentos"
+  ],
+  "totalValue": "8750000",
+  "currency": "AOA",
+  "usedValue": "8750000",
+  "billingPeriodicity": "SEMESTRAL",
+  "paymentTermDays": 45,
+  "status": "ATIVO",
+  "validFrom": "2026-07-30T10:41:49.382Z",
+  "validUntil": "2026-11-22T10:41:49.382Z",
+  "createdAt": "2026-10-28T10:41:49.383Z",
+  "updatedAt": "2026-10-28T10:41:49.383Z",
+  "clientCompany": {
+   "id": "eb5307c8-598d-4e90-8911-66b3f822048a",
+   "name": "Petro Angola Operações, Lda"
+  },
+  "supplierCompany": {
+   "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+   "name": "Fornecedora Industrial Kianda, Lda"
+  }
+ },
+ {
+  "id": "03e5f39a-df2b-4a6f-bc7c-07433573ce5d",
+  "reference": "CTR-2026-0003",
+  "clientCompanyId": "eb5307c8-598d-4e90-8911-66b3f822048a",
+  "supplierCompanyId": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+  "categoriesCovered": [
+   "Logística & Transporte"
+  ],
+  "totalValue": "6800000",
+  "currency": "AOA",
+  "usedValue": "6800000",
+  "billingPeriodicity": "TRIMESTRAL",
+  "paymentTermDays": 30,
+  "status": "EXPIRADO",
+  "validFrom": "2025-09-23T10:41:49.382Z",
+  "validUntil": "2026-09-28T10:41:49.382Z",
+  "createdAt": "2026-10-28T10:41:49.383Z",
+  "updatedAt": "2026-10-28T10:41:49.383Z",
+  "clientCompany": {
+   "id": "eb5307c8-598d-4e90-8911-66b3f822048a",
+   "name": "Petro Angola Operações, Lda"
+  },
+  "supplierCompany": {
+   "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+   "name": "Fornecedora Industrial Kianda, Lda"
+  }
+ }
+]

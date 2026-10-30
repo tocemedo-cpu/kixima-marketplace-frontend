@@ -1,0 +1,240 @@
+{
+ "ambiente": "dev",
+ "verificadoEm": "2026-10-30T09:02:06.020739695Z",
+ "resumo": {
+  "total": 26,
+  "ok": 6,
+  "avisos": 12,
+  "falhas": 8
+ },
+ "grupos": [
+  {
+   "grupo": "Base de dados",
+   "checks": [
+    {
+     "id": "db-url",
+     "titulo": "Ligação da aplicação (DATABASE_URL)",
+     "estado": "aviso",
+     "detalhe": "Ligada a localhost:5432 sem prepareThreshold=0.",
+     "acao": "Em produção use o pooler de transação: porta 6543 e ?prepareThreshold=0&sslmode=require. Sem ele, o número de ligações esgota-se com o tráfego."
+    },
+    {
+     "id": "db-direct",
+     "titulo": "Ligação direta (DIRECT_URL)",
+     "estado": "falha",
+     "detalhe": "Não está definida.",
+     "acao": "Defina DIRECT_URL com o pooler de SESSÃO (mesmo host, porta 5432). As migrações e a cópia de segurança precisam dela — o pooler de transação não serve para nenhuma das duas."
+    }
+   ]
+  },
+  {
+   "grupo": "Armazenamento",
+   "checks": [
+    {
+     "id": "storage",
+     "titulo": "Armazenamento de ficheiros",
+     "estado": "falha",
+     "detalhe": "A guardar no disco do contentor, que é apagado a cada deploy e a cada arranque depois de suspensão. NESTE MOMENTO estão em risco: 10 documento(s) de credenciamento.",
+     "acao": "Defina STORAGE_PROVIDER=s3 e as credenciais do Supabase Storage (receita no DEPLOY.md). O que se perde não é decorativo: os COMPROVATIVOS DE TRANSFERÊNCIA são a prova inteira que sustenta o \"pagamento garantido\", e a certidão comercial, o alvará e a licença ANPG são o que justificou aprovar cada empresa. Quando desaparecem, a base continua a apontar para o URL e o pedido devolve 404 sem registar erro nenhum — só se descobre no dia em que há uma disputa."
+    }
+   ]
+  },
+  {
+   "grupo": "Cópias de segurança",
+   "checks": [
+    {
+     "id": "backup-cron",
+     "titulo": "Cópia de segurança automática",
+     "estado": "falha",
+     "detalhe": "Não está agendada — a variável BACKUP_CRON não chegou a este processo.",
+     "acao": "Se ainda não a definiu: BACKUP_CRON=0 3 * * * (cinco campos, sem aspas) dá uma cópia diária às 03:00 UTC. Se JÁ a definiu no Render e continua a ver isto, a variável é lida uma única vez no arranque: guardar no painel não basta, o serviço tem de reiniciar (Manual Deploy → Deploy latest commit, ou Restart service). Confirme também que ficou no serviço certo e que o nome não tem espaços nem letras minúsculas."
+    },
+    {
+     "id": "backup-bucket",
+     "titulo": "Bucket das cópias (STORAGE_BACKUP_BUCKET)",
+     "estado": "falha",
+     "detalhe": "Não está definido.",
+     "acao": "Crie um bucket PRIVADO só para cópias e indique-o aqui. As cópias não podem ir para o bucket das imagens: esse é público, e um dump da base tem hashes de senha, os dados de todas as empresas e o histórico financeiro."
+    },
+    {
+     "id": "pg-dump",
+     "titulo": "Ferramenta de cópia (pg_dump)",
+     "estado": "ok",
+     "detalhe": "pg_dump (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1) — servidor PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)"
+    },
+    {
+     "id": "backup-ultima",
+     "titulo": "Última cópia com sucesso",
+     "estado": "falha",
+     "detalhe": "Ainda não há nenhuma cópia registada.",
+     "acao": "Use o botão \"Fazer cópia agora\" para confirmar que tudo funciona antes de confiar no agendamento. Uma cópia que nunca correu não é uma cópia."
+    }
+   ]
+  },
+  {
+   "grupo": "Email",
+   "checks": [
+    {
+     "id": "email",
+     "titulo": "Envio de email",
+     "estado": "falha",
+     "detalhe": "EMAIL_PROVIDER=console — nada é enviado, tudo fica no registo.",
+     "acao": "Defina EMAIL_PROVIDER=brevo e BREVO_API_KEY. Neste estado os convites, a recuperação de senha e os avisos de fatura nunca chegam a ninguém, e não aparece erro nenhum."
+    },
+    {
+     "id": "email-from",
+     "titulo": "Remetente (EMAIL_FROM)",
+     "estado": "ok",
+     "detalhe": "notificacoes@kixima.co.ao",
+     "acao": "Confirme que este endereço está VERIFICADO na conta Brevo — se não estiver, o envio é recusado."
+    },
+    {
+     "id": "app-url",
+     "titulo": "Endereço público (APP_URL)",
+     "estado": "ok",
+     "detalhe": ""
+    }
+   ]
+  },
+  {
+   "grupo": "Autenticação de dois fatores",
+   "checks": [
+    {
+     "id": "mfa-prazo",
+     "titulo": "2FA obrigatória (MFA_ENFORCE_FROM)",
+     "estado": "aviso",
+     "detalhe": "Sem data definida — a 2FA é só um aviso e nunca é exigida.",
+     "acao": "Defina MFA_ENFORCE_FROM com uma data futura no formato 2026-09-15T00:00:00Z (sem aspas), para dar prazo a ADMIN_SISTEMA e COMPANY_ADMIN configurarem a 2FA antes de passar a ser obrigatória."
+    },
+    {
+     "id": "mfa-contas",
+     "titulo": "Contas com poder sem 2FA",
+     "estado": "aviso",
+     "detalhe": "5 de perfil ADMIN_SISTEMA ou COMPANY_ADMIN.",
+     "acao": "Cada pessoa ativa a sua em Configurações → Segurança. Ninguém pode fazê-lo por ela — é esse o ponto."
+    }
+   ]
+  },
+  {
+   "grupo": "Segredos",
+   "checks": [
+    {
+     "id": "jwt",
+     "titulo": "Chave de assinatura das sessões (JWT_SECRET)",
+     "estado": "ok",
+     "detalhe": "Definida (57 caracteres)."
+    }
+   ]
+  },
+  {
+   "grupo": "Contas sob ataque",
+   "checks": [
+    {
+     "id": "bloqueios",
+     "titulo": "Contas bloqueadas por tentativas falhadas",
+     "estado": "ok",
+     "detalhe": "Nenhuma neste momento."
+    }
+   ]
+  },
+  {
+   "grupo": "Cobranças de subscrição",
+   "checks": [
+    {
+     "id": "iban",
+     "titulo": "Dados bancários para as subscrições",
+     "estado": "falha",
+     "detalhe": "KIXIMA_BANCO_IBAN não está definido.",
+     "acao": "Defina KIXIMA_BANCO_IBAN (e, se quiser, KIXIMA_BANCO_TITULAR, KIXIMA_BANCO_NOME, KIXIMA_BANCO_SWIFT e KIXIMA_BANCO_MOEDA). Sem o IBAN, quem pede um plano lê \"transfira o valor\" e não tem para onde."
+    }
+   ]
+  },
+  {
+   "grupo": "Faturação certificada (AGT)",
+   "checks": [
+    {
+     "id": "agt-serie",
+     "titulo": "Série de faturação certificada (por fornecedor)",
+     "estado": "aviso",
+     "detalhe": "Nenhuma das 1 empresas fornecedoras tem série declarada — todas emitem sem numeração certificada.",
+     "acao": "Declare a série de cada fornecedor em Empresas → [fornecedor] → Série fiscal, SÓ depois de a AGT lha atribuir. Ligá-la antes disso emitiria documentos numa série que não existe, e a numeração não se corrige para trás."
+    },
+    {
+     "id": "agt-nif",
+     "titulo": "NIF da KIXIMA como fabricante do software (KIXIMA_NIF)",
+     "estado": "aviso",
+     "detalhe": "Não está definido.",
+     "acao": "O SAF-T sai com o campo ProductCompanyTaxID por preencher. É preferível a um número inventado, mas a AGT recusa o ficheiro assim."
+    },
+    {
+     "id": "agt-certificado",
+     "titulo": "Certificado do programa (AGT)",
+     "estado": "aviso",
+     "detalhe": "Ainda não atribuído.",
+     "acao": "Sai do processo de certificação junto da AGT. Fica vazio até existir — um número de certificado inventado num ficheiro fiscal é uma declaração falsa."
+    },
+    {
+     "id": "agt-assinatura",
+     "titulo": "Assinatura JWS do payload de submissão (AGT)",
+     "estado": "aviso",
+     "detalhe": "Implementado contra o formato observado em amostras da AGT, por ligar. Requer certificação e chave privada reais. Chave privada: não configurada.",
+     "acao": "Requer certificação e chave privada reais da AGT. Em falta: AGT_JWS_PRIVATE_KEY_BASE64 (ou o ficheiro local configurado em kixima.agt.jws-private-key-path), AGT_SOFTWARE_VALIDATION_NUMBER. Sem isto o payload não é assinado — nunca uma assinatura simulada."
+    }
+   ]
+  },
+  {
+   "grupo": "Canais de pagamento",
+   "checks": [
+    {
+     "id": "pag-manual",
+     "titulo": "Transferência com comprovativo",
+     "estado": "ok",
+     "detalhe": "Sempre disponível.",
+     "acao": "É a alternativa que fica de pé quando um canal automático falha — não a desligue."
+    },
+    {
+     "id": "pag-referencia",
+     "titulo": "Referência bancária (KIXIMA_BANCO_IBAN)",
+     "estado": "falha",
+     "detalhe": "O IBAN não está definido.",
+     "acao": "Sem ele a plataforma gera a referência mas não tem para onde dizer que se transfira — o comprador vê uma referência e nenhuma conta."
+    },
+    {
+     "id": "pag-emis_multicaixa",
+     "titulo": "Multicaixa Express",
+     "estado": "aviso",
+     "detalhe": "Implementado contra a especificação da EMIS, por ligar. Requer contrato e credenciais.",
+     "acao": "Requer contrato e credenciais do Multicaixa Express. Em falta: baseUrl, posId, token, callbackUrl. Sem isto o canal recusa-se a funcionar em vez de simular — que é o comportamento certo."
+    },
+    {
+     "id": "pag-paypay",
+     "titulo": "PayPay",
+     "estado": "aviso",
+     "detalhe": "Forma provável, por confirmar contra a documentação real da PayPay. Requer contrato e credenciais.",
+     "acao": "Requer contrato e credenciais do PayPay. Em falta: baseUrl, merchantId, token, callbackUrl. Sem isto o canal recusa-se a funcionar em vez de simular — que é o comportamento certo."
+    },
+    {
+     "id": "pag-bai",
+     "titulo": "BAI",
+     "estado": "aviso",
+     "detalhe": "Forma provável, por confirmar contra a documentação real da API do BAI. Requer contrato e credenciais.",
+     "acao": "Requer contrato e credenciais do BAI. Em falta: baseUrl, clientId, clientSecret, callbackUrl. Sem isto o canal recusa-se a funcionar em vez de simular — que é o comportamento certo."
+    },
+    {
+     "id": "pag-bfa",
+     "titulo": "BFA",
+     "estado": "aviso",
+     "detalhe": "Forma provável, por confirmar contra a documentação real da API do BFA. Requer contrato e credenciais.",
+     "acao": "Requer contrato e credenciais do BFA. Em falta: baseUrl, clientId, clientSecret, callbackUrl. Sem isto o canal recusa-se a funcionar em vez de simular — que é o comportamento certo."
+    },
+    {
+     "id": "pag-standard_bank_angola",
+     "titulo": "Standard Bank Angola",
+     "estado": "aviso",
+     "detalhe": "Forma provável, por confirmar contra a documentação real da API do Standard Bank Angola. Requer contrato e credenciais.",
+     "acao": "Requer contrato e credenciais do Standard Bank Angola. Em falta: baseUrl, clientId, clientSecret, callbackUrl. Sem isto o canal recusa-se a funcionar em vez de simular — que é o comportamento certo."
+    }
+   ]
+  }
+ ]
+}

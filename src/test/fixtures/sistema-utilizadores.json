@@ -1,0 +1,82 @@
+[
+ {
+  "id": "1c6fcddf-a6fa-46b5-a9fc-ca508c4fb6a0",
+  "name": "Admin Teste",
+  "email": "admin696855@teste-e2e.example",
+  "role": "COMPANY_ADMIN",
+  "active": true,
+  "companyName": "Empresa Teste E2E 696855",
+  "createdAt": "2026-10-30T08:58:17.103Z",
+  "adminAreas": []
+ },
+ {
+  "id": "38d1cec5-3e61-4975-ba47-f5197d85f0a0",
+  "name": "Admin Teste",
+  "email": "admin684731@teste-e2e.example",
+  "role": "COMPANY_ADMIN",
+  "active": true,
+  "companyName": "Empresa Teste E2E 684731",
+  "createdAt": "2026-10-30T08:41:25.053Z",
+  "adminAreas": []
+ },
+ {
+  "id": "9b9dfb1f-67b3-4f4d-a6e2-eafa3f48464e",
+  "name": "Admin Teste",
+  "email": "admin647098@teste-e2e.example",
+  "role": "COMPANY_ADMIN",
+  "active": true,
+  "companyName": "Empresa Teste E2E 647098",
+  "createdAt": "2026-10-30T08:40:47.439Z",
+  "adminAreas": []
+ },
+ {
+  "id": "aa86e49c-db67-4c99-9501-ea3112b0a7e3",
+  "name": "Bruno Company Admin",
+  "email": "admin@petroangola.co.ao",
+  "role": "COMPANY_ADMIN",
+  "active": true,
+  "companyName": "Petro Angola Operações, Lda",
+  "createdAt": "2026-10-28T10:41:49.242Z",
+  "adminAreas": []
+ },
+ {
+  "id": "4b99a924-0f87-42f0-a938-4b305d2b4681",
+  "name": "Admin KIXIMA",
+  "email": "admin@kixima.co.ao",
+  "role": "ADMIN_SISTEMA",
+  "active": true,
+  "companyName": null,
+  "createdAt": "2026-10-28T10:41:49.242Z",
+  "adminAreas": []
+ },
+ {
+  "id": "2d697b96-a281-4137-aa51-9bbccdd521aa",
+  "name": "Ana Comprador",
+  "email": "comprador@petroangola.co.ao",
+  "role": "COMPRADOR",
+  "active": true,
+  "companyName": "Petro Angola Operações, Lda",
+  "createdAt": "2026-10-28T10:41:49.242Z",
+  "adminAreas": []
+ },
+ {
+  "id": "791c8397-713f-4b94-8bc2-0277a774301d",
+  "name": "Duarte Fornecedor",
+  "email": "fornecedor@kianda.co.ao",
+  "role": "FORNECEDOR",
+  "active": true,
+  "companyName": "Fornecedora Industrial Kianda, Lda",
+  "createdAt": "2026-10-28T10:41:49.242Z",
+  "adminAreas": []
+ },
+ {
+  "id": "f6f69573-e169-468e-800d-de81e9134817",
+  "name": "Carla Financeiro",
+  "email": "financeiro@petroangola.co.ao",
+  "role": "FINANCEIRO",
+  "active": true,
+  "companyName": "Petro Angola Operações, Lda",
+  "createdAt": "2026-10-28T10:41:49.242Z",
+  "adminAreas": []
+ }
+]

@@ -1,0 +1,42 @@
+{
+ "company": {
+  "id": "eb5307c8-598d-4e90-8911-66b3f822048a",
+  "name": "Petro Angola Operações, Lda",
+  "taxId": "AO-CLI-0001",
+  "type": "CLIENTE",
+  "status": "APROVADA",
+  "contactEmail": "contacto@petroangola.co.ao",
+  "contactPhone": null,
+  "address": null,
+  "verified": false,
+  "logoUrl": null,
+  "city": null,
+  "province": null,
+  "country": "Angola",
+  "settings": null,
+  "bankName": null,
+  "iban": null,
+  "swift": null,
+  "serieFiscal": null,
+  "dataAdesaoFacturacaoElectronica": null,
+  "termsAcceptedAt": null,
+  "employees": null,
+  "annualRevenueUsd": null,
+  "size": "PEQUENA",
+  "plan": "CORE",
+  "searchRank": 1,
+  "planoValidoAte": null,
+  "seatPriceUsd": "100",
+  "planNotes": null,
+  "createdAt": "2026-10-28T10:41:49.229Z",
+  "updatedAt": "2026-10-28T10:41:49.229Z",
+  "approvedAt": "2026-10-28T10:41:49.188Z",
+  "rejectedAt": null
+ },
+ "summary": {
+  "users": 3,
+  "contracts": 3,
+  "documents": 2,
+  "certifications": 0
+ }
+}

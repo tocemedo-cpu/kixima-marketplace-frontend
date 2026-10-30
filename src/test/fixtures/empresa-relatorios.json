@@ -1,0 +1,76 @@
+{
+ "kpis": {
+  "gerados": 4,
+  "ordens": 8,
+  "contratos": 3,
+  "faturado": 9929400
+ },
+ "series": [
+  {
+   "label": "mai.",
+   "receitas": 0,
+   "despesas": 0,
+   "contratos": 0
+  },
+  {
+   "label": "jun.",
+   "receitas": 0,
+   "despesas": 0,
+   "contratos": 0
+  },
+  {
+   "label": "jul.",
+   "receitas": 0,
+   "despesas": 0,
+   "contratos": 0
+  },
+  {
+   "label": "ago.",
+   "receitas": 0,
+   "despesas": 0,
+   "contratos": 0
+  },
+  {
+   "label": "set.",
+   "receitas": 0,
+   "despesas": 0,
+   "contratos": 0
+  },
+  {
+   "label": "out.",
+   "receitas": 9929400,
+   "despesas": 15710000,
+   "contratos": 3
+  }
+ ],
+ "catalog": [
+  {
+   "key": "financeiro",
+   "name": "Relatório Financeiro",
+   "module": "Financeiro",
+   "desc": "Resumo de faturas e pagamentos",
+   "format": "PDF"
+  },
+  {
+   "key": "ordens",
+   "name": "Relatório de Ordens de Compra",
+   "module": "Ordens",
+   "desc": "POs por estado e valor",
+   "format": "Excel"
+  },
+  {
+   "key": "contratos",
+   "name": "Relatório de Contratos",
+   "module": "Contratos",
+   "desc": "Estado e validade dos contratos",
+   "format": "PDF"
+  },
+  {
+   "key": "atividades",
+   "name": "Atividade da Empresa",
+   "module": "Atividades",
+   "desc": "Ações e acessos recentes",
+   "format": "PDF"
+  }
+ ]
+}

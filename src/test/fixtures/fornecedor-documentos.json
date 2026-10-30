@@ -1,0 +1,19 @@
+{
+ "productDocs": [],
+ "companyDocs": [
+  {
+   "id": "ec8515f8-2104-4778-bc96-1a3f37a1c587",
+   "type": "CERTIDAO_COMERCIAL",
+   "fileUrl": "/api/uploads/demo-certidao2.pdf",
+   "originalName": "certidao-kianda.pdf",
+   "createdAt": "2026-10-28T10:41:49.253Z"
+  },
+  {
+   "id": "36969410-1806-49fe-85f7-0a2320df59df",
+   "type": "LICENCA_ANPG",
+   "fileUrl": "/api/uploads/demo-anpg.pdf",
+   "originalName": "licenca-anpg.pdf",
+   "createdAt": "2026-10-28T10:41:49.253Z"
+  }
+ ]
+}

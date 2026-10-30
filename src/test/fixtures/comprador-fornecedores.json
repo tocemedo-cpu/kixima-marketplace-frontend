@@ -1,0 +1,27 @@
+{
+ "kpis": {
+  "total": 1,
+  "ativos": 1,
+  "homologados": 1,
+  "emAvaliacao": 0,
+  "novos": 1
+ },
+ "items": [
+  {
+   "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+   "name": "Fornecedora Industrial Kianda, Lda",
+   "logoUrl": null,
+   "verified": true,
+   "status": "APROVADA",
+   "city": "Luanda",
+   "country": "Angola",
+   "category": "Inspeção & Ensaios",
+   "rating": 4.6,
+   "productCount": 9,
+   "lastTransaction": {
+    "reference": "PO-2026-00008",
+    "createdAt": "2026-10-18T10:41:49.377Z"
+   }
+  }
+ ]
+}

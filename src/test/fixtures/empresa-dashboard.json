@@ -1,0 +1,73 @@
+{
+ "kpis": {
+  "pedidos": 8,
+  "emExecucao": 2,
+  "volumeNegocios": 15710000,
+  "aprovarPO": 1
+ },
+ "resumo": {
+  "usuariosAtivos": 3,
+  "contratosAtivos": 2,
+  "totalContratos": 3,
+  "concluidas": 2,
+  "compliance": 80
+ },
+ "volume": [
+  {
+   "label": "mai.",
+   "value": 0
+  },
+  {
+   "label": "jun.",
+   "value": 0
+  },
+  {
+   "label": "jul.",
+   "value": 0
+  },
+  {
+   "label": "ago.",
+   "value": 0
+  },
+  {
+   "label": "set.",
+   "value": 0
+  },
+  {
+   "label": "out.",
+   "value": 15710000
+  }
+ ],
+ "recent": [
+  {
+   "reference": "PO-2026-00008",
+   "status": "REJEITADA",
+   "at": "2026-10-28T10:41:49.378Z",
+   "party": "Fornecedora Industrial Kianda, Lda"
+  },
+  {
+   "reference": "PO-2026-00007",
+   "status": "RECEBIDA_COM_DIVERGENCIA",
+   "at": "2026-10-28T10:41:49.370Z",
+   "party": "Fornecedora Industrial Kianda, Lda"
+  },
+  {
+   "reference": "PO-2026-00006",
+   "status": "RECEBIDA_CONFORME",
+   "at": "2026-10-28T10:41:49.361Z",
+   "party": "Fornecedora Industrial Kianda, Lda"
+  },
+  {
+   "reference": "PO-2026-00005",
+   "status": "ENTREGUE",
+   "at": "2026-10-28T10:41:49.354Z",
+   "party": "Fornecedora Industrial Kianda, Lda"
+  },
+  {
+   "reference": "PO-2026-00004",
+   "status": "EM_EXECUCAO",
+   "at": "2026-10-28T10:41:49.345Z",
+   "party": "Fornecedora Industrial Kianda, Lda"
+  }
+ ]
+}

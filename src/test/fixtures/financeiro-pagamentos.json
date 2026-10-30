@@ -1,0 +1,88 @@
+{
+ "kpis": {
+  "aPagar": 2394000,
+  "pagosMes": 9929400,
+  "vencidos": 0,
+  "total": 6
+ },
+ "items": [
+  {
+   "id": "cdebddfa-caac-449d-94b9-5bf73708a90e",
+   "reference": "FAT-2026-00001",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "poReference": "PO-2026-00002",
+   "poId": "3ad0b9e0-ff95-406c-b597-e3830313fae9",
+   "amount": 2394000,
+   "currency": "AOA",
+   "status": "PENDENTE",
+   "issuedAt": "2026-10-21T10:41:49.331Z",
+   "dueAt": "2026-10-31T10:41:49.331Z",
+   "paidAt": null
+  },
+  {
+   "id": "ad563720-019c-45fe-8253-b162470ec153",
+   "reference": "FAT-2026-00002",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "poReference": "PO-2026-00003",
+   "poId": "eee77687-ee6b-4455-8efc-6e6f03fe6d71",
+   "amount": 684000,
+   "currency": "AOA",
+   "status": "PAGA",
+   "issuedAt": "2026-10-21T10:41:49.339Z",
+   "dueAt": "2026-10-31T10:41:49.339Z",
+   "paidAt": "2026-10-23T10:41:49.341Z"
+  },
+  {
+   "id": "0df24843-210b-4c45-9ec4-ae36faf58411",
+   "reference": "FAT-2026-00003",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "poReference": "PO-2026-00004",
+   "poId": "7d2b7048-503d-40ea-8d30-40451bffab9f",
+   "amount": 5643000,
+   "currency": "AOA",
+   "status": "PAGA",
+   "issuedAt": "2026-10-21T10:41:49.348Z",
+   "dueAt": "2026-10-31T10:41:49.348Z",
+   "paidAt": "2026-10-23T10:41:49.351Z"
+  },
+  {
+   "id": "91492304-d99e-4eb2-8b76-a8c9c6e4df68",
+   "reference": "FAT-2026-00004",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "poReference": "PO-2026-00005",
+   "poId": "481b8680-4232-4377-994f-8ba1d69bdff2",
+   "amount": 1083000,
+   "currency": "AOA",
+   "status": "PAGA",
+   "issuedAt": "2026-10-21T10:41:49.357Z",
+   "dueAt": "2026-10-31T10:41:49.357Z",
+   "paidAt": "2026-10-23T10:41:49.359Z"
+  },
+  {
+   "id": "2b257e6d-3f6d-4433-ab6a-77c22b8fed32",
+   "reference": "FAT-2026-00005",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "poReference": "PO-2026-00006",
+   "poId": "5493d89b-5a2a-4963-9caa-7980dc747eb0",
+   "amount": 1425000,
+   "currency": "AOA",
+   "status": "PAGA",
+   "issuedAt": "2026-10-21T10:41:49.365Z",
+   "dueAt": "2026-10-31T10:41:49.365Z",
+   "paidAt": "2026-10-23T10:41:49.367Z"
+  },
+  {
+   "id": "d637165d-9dbb-45d5-abca-e5772ce0aed8",
+   "reference": "FAT-2026-00006",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "poReference": "PO-2026-00007",
+   "poId": "f22af773-61df-45b5-95e8-aee69b872d77",
+   "amount": 1094400,
+   "currency": "AOA",
+   "status": "PAGA",
+   "issuedAt": "2026-10-21T10:41:49.373Z",
+   "dueAt": "2026-10-31T10:41:49.373Z",
+   "paidAt": "2026-10-23T10:41:49.375Z"
+  }
+ ]
+}

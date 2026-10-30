@@ -1,0 +1,88 @@
+/* KIXIMA Marketplace — tokens semânticos.
+ *
+ * Os componentes NUNCA usam as cores cruas de temas.css: usam estes nomes, que dizem para que servem.
+ * Assim um fundo novo (ou um ajuste de contraste) é só uma alteração em temas.css.
+ */
+
+:root {
+  /* Superfícies e linhas */
+  --kx-bg: var(--marfim);            /* fundo da página */
+  --kx-bg-2: var(--canvas);          /* faixas alternadas, áreas de apoio */
+  --kx-surface: var(--branco);       /* cartões, campos, menus */
+  --kx-surface-2: var(--areia);      /* cabeçalhos de tabela, itens activos */
+  --kx-hover: var(--hover);
+  --kx-line: var(--linha);
+  --kx-line-strong: var(--linha-2);
+
+  /* Texto (todos com contraste AA sobre --kx-surface e --kx-bg) */
+  --kx-ink: var(--preto);            /* títulos */
+  --kx-text: var(--texto);           /* corrente */
+  --kx-text-muted: var(--suave);     /* secundário */
+  --kx-text-faint: var(--tenue);     /* terciário (legendas) */
+
+  /* Marca e acção */
+  --kx-primary: var(--cta);          /* botão principal */
+  --kx-on-primary: var(--branco);    /* texto sobre o botão principal (branco no claro, superfície escura nos escuros) */
+  --kx-brand: var(--vermelho);       /* vermelho Samakaka: ligações, realces, destaques de marca */
+  --kx-accent: var(--ocre);          /* ocre: decoração e realce (NUNCA como texto sobre claro) */
+  --kx-focus: var(--preto);          /* anel de foco: contraste >= 3:1 em qualquer fundo */
+  --kx-halo: var(--halo);
+
+  /* Estados */
+  --kx-danger: var(--al-fg);  --kx-danger-bg: var(--al-bg);  --kx-danger-line: var(--al-bd);
+  --kx-warning: var(--cu-fg); --kx-warning-bg: var(--cu-bg); --kx-warning-line: var(--cu-bd);
+  --kx-success: var(--ok-fg); --kx-success-bg: var(--ok-bg); --kx-success-line: var(--ok-bd);
+
+  /* Barra de aplicação (sempre escura nos três fundos) */
+  --kx-shell: var(--shell);
+  --kx-shell-text: var(--shell-txt);
+  --kx-shell-muted: var(--shell-fg);
+  --kx-shell-line: var(--shell-linha);
+  --kx-search-bg: var(--busca-bg);
+  --kx-search-line: var(--busca-bd);
+  --kx-search-text: var(--busca-fg);
+
+  /* Elevação e véu */
+  --kx-shadow: var(--sombra);
+  --kx-shadow-high: var(--sombra-alta);
+  --kx-scrim: var(--veu);
+
+  /* Fio Samakaka — 4px, losangos vermelho / ocre / marfim / vermelho (48x4). Faz parte da marca: não alterar. */
+  --kx-samakaka: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='4' viewBox='0 0 48 4'><path d='M4 0l4 2-4 2-4-2z' fill='%23B8202E'/><path d='M16 0l4 2-4 2-4-2z' fill='%23D99A05'/><path d='M28 0l4 2-4 2-4-2z' fill='%23F7F3EA'/><path d='M40 0l4 2-4 2-4-2z' fill='%23B8202E'/></svg>");
+
+  /* Tipografia: Sora (títulos), Inter (corpo), IBM Plex Mono (referências, códigos, cabeçalhos de tabela) */
+  --kx-font-display: 'Sora Variable', 'Sora', system-ui, sans-serif;
+  --kx-font-body: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --kx-font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* Escala tipográfica (fluida nos títulos: do telemóvel ao ecrã grande, sem media queries) */
+  --kx-text-xs: .75rem;
+  --kx-text-sm: .875rem;
+  --kx-text-md: 1rem;
+  --kx-text-lg: 1.125rem;
+  --kx-text-xl: clamp(1.25rem, 1.1rem + .6vw, 1.5rem);
+  --kx-text-2xl: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --kx-text-3xl: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
+
+  /* Espaçamento (base 4px) */
+  --kx-space-1: .25rem; --kx-space-2: .5rem;  --kx-space-3: .75rem; --kx-space-4: 1rem;
+  --kx-space-5: 1.5rem; --kx-space-6: 2rem;   --kx-space-7: 3rem;   --kx-space-8: 4.5rem;
+
+  /* Forma */
+  --kx-radius-sm: 4px; --kx-radius: 6px; --kx-radius-lg: 10px; --kx-radius-pill: 999px;
+
+  /* Layout */
+  --kx-container: 1240px;
+  --kx-gutter: clamp(1rem, 4vw, 2rem);   /* 16px no telemóvel */
+  --kx-topbar-h: 56px;
+  --kx-control-h: 40px;                  /* altura de botões e campos */
+  --kx-touch: 44px;                      /* alvo táctil mínimo */
+
+  /* Movimento: discreto, e desligado para quem pede menos animação (base.css) */
+  --kx-ease: cubic-bezier(.2, .7, .2, 1);
+  --kx-dur-fast: 120ms;
+  --kx-dur: 200ms;
+
+  /* Camadas */
+  --kx-z-sticky: 20; --kx-z-menu: 40; --kx-z-modal: 60; --kx-z-toast: 80;
+}

@@ -1,0 +1,63 @@
+{
+ "user": {
+  "id": "2d697b96-a281-4137-aa51-9bbccdd521aa",
+  "name": "Ana Comprador",
+  "email": "comprador@petroangola.co.ao",
+  "role": "COMPRADOR",
+  "avatarUrl": null,
+  "createdAt": "2026-10-28T10:41:49.242Z"
+ },
+ "company": {
+  "id": "eb5307c8-598d-4e90-8911-66b3f822048a",
+  "name": "Petro Angola Operações, Lda",
+  "taxId": "AO-CLI-0001",
+  "type": "CLIENTE",
+  "status": "APROVADA",
+  "contactEmail": "contacto@petroangola.co.ao",
+  "contactPhone": null,
+  "address": null,
+  "city": null,
+  "province": null,
+  "country": "Angola",
+  "logoUrl": null,
+  "verified": false
+ },
+ "summary": {
+  "ordersYear": 8,
+  "totalBought": 15710000,
+  "suppliers": 1,
+  "itemsReceived": 3
+ },
+ "recent": [
+  {
+   "reference": "PO-2026-00008",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "status": "REJEITADA",
+   "at": "2026-10-28T10:41:49.378Z"
+  },
+  {
+   "reference": "PO-2026-00007",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "status": "RECEBIDA_COM_DIVERGENCIA",
+   "at": "2026-10-28T10:41:49.370Z"
+  },
+  {
+   "reference": "PO-2026-00006",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "status": "RECEBIDA_CONFORME",
+   "at": "2026-10-28T10:41:49.361Z"
+  },
+  {
+   "reference": "PO-2026-00005",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "status": "ENTREGUE",
+   "at": "2026-10-28T10:41:49.354Z"
+  },
+  {
+   "reference": "PO-2026-00004",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "status": "EM_EXECUCAO",
+   "at": "2026-10-28T10:41:49.345Z"
+  }
+ ]
+}

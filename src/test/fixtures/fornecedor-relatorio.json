@@ -1,0 +1,94 @@
+{
+ "janela": {
+  "meses": 12,
+  "ilimitado": false,
+  "limitePlano": 12,
+  "truncada": false,
+  "desde": "2025-10-30T09:02:05.282722345Z",
+  "semJanela": [
+   "totalProducts",
+   "activeProducts",
+   "lowStock",
+   "totalViews",
+   "topViewed"
+  ]
+ },
+ "totalProducts": 9,
+ "activeProducts": 9,
+ "lowStock": 0,
+ "totalOrders": 8,
+ "statusCounts": {
+  "AGUARDANDO_APROVACAO": 1,
+  "AGUARDANDO_PAGAMENTO": 1,
+  "PAGA": 1,
+  "EM_EXECUCAO": 1,
+  "ENTREGUE": 1,
+  "RECEBIDA_CONFORME": 1,
+  "RECEBIDA_COM_DIVERGENCIA": 1,
+  "REJEITADA": 1
+ },
+ "revenue": 8710000,
+ "totalViews": 52,
+ "topProducts": [
+  {
+   "productId": "13dd3599-b5ee-4772-b858-90e58a2feee6",
+   "name": "Mangueira hidráulica de alta pressão 2\"",
+   "quantity": 5,
+   "total": 600000
+  },
+  {
+   "productId": "4f0e6855-2dd4-47cd-a598-0cfdb6ecfdf0",
+   "name": "Tubos de Aço Carbono (lote)",
+   "quantity": 3,
+   "total": 4950000
+  },
+  {
+   "productId": "e135db4f-753c-4e2b-adc1-54f90af82573",
+   "name": "Válvula de esfera 4\" API 6D",
+   "quantity": 2,
+   "total": 1700000
+  },
+  {
+   "productId": "201fc309-3d9c-4958-829e-19a75e532715",
+   "name": "Transporte de Carga Industrial",
+   "quantity": 2,
+   "total": 960000
+  },
+  {
+   "productId": "62bd9d41-7cd9-41e7-aec8-cdad0946cdfa",
+   "name": "Gerador Diesel 500 kVA",
+   "quantity": 1,
+   "total": 2100000
+  },
+  {
+   "productId": "c6dc9d73-b5c5-4e1d-8169-444343d42b40",
+   "name": "Inspeção por Ultrassom (UT)",
+   "quantity": 1,
+   "total": 950000
+  },
+  {
+   "productId": "f4218e72-94d0-42c0-a60f-6d0a7a8a38e0",
+   "name": "Ensaios não Destrutivos (NDT)",
+   "quantity": 1,
+   "total": 1250000
+  },
+  {
+   "productId": "09da1dd1-3c25-4f15-9d7f-da346f8ab524",
+   "name": "Engenharia de Detalhe (Oil & Gas)",
+   "quantity": 1,
+   "total": 3200000
+  }
+ ],
+ "topViewed": [
+  {
+   "productId": "c6dc9d73-b5c5-4e1d-8169-444343d42b40",
+   "name": "Inspeção por Ultrassom (UT)",
+   "views": 41
+  },
+  {
+   "productId": "09da1dd1-3c25-4f15-9d7f-da346f8ab524",
+   "name": "Engenharia de Detalhe (Oil & Gas)",
+   "views": 11
+  }
+ ]
+}

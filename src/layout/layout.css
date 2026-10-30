@@ -1,0 +1,89 @@
+/* KIXIMA Marketplace — layout: barra superior, navegação horizontal e rodapé. */
+
+.kx-shell { min-height: 100dvh; display: flex; flex-direction: column; }
+.kx-main { flex: 1; outline: none; }
+
+/* ---------- Faixa escura: marca, pesquisa, acções ---------- */
+.kx-topbar { position: sticky; top: 0; z-index: var(--kx-z-sticky); }
+.kx-topbar__main { background: var(--kx-shell); color: var(--kx-shell-text); }
+.kx-topbar__row { display: flex; align-items: center; gap: 1rem; min-height: var(--kx-topbar-h); padding-block: .5rem; }
+.kx-topbar__logo { display: inline-flex; flex: none; border-radius: var(--kx-radius); }
+.kx-topbar__logo:focus-visible, .kx-topbar__burger:focus-visible, .kx-search__input:focus-visible, .kx-search__btn:focus-visible, .kx-tema__select:focus-visible {
+  outline-color: var(--kx-shell-text);
+}
+.kx-topbar__spacer { flex: 1; }
+.kx-topbar__actions { display: flex; align-items: center; gap: .5rem; margin-left: auto; flex: none; }
+.kx-topbar__burger { display: none; width: var(--kx-touch); height: var(--kx-touch); place-items: center; flex: none; border: 1px solid var(--kx-shell-line); border-radius: var(--kx-radius); background: transparent; color: var(--kx-shell-text); cursor: pointer; }
+
+/* Pesquisa central */
+.kx-search { flex: 1; display: flex; max-width: 720px; margin-inline: auto; }
+.kx-search__input {
+  flex: 1; min-width: 0; min-height: 42px; padding: 0 1rem;
+  background: var(--kx-search-bg); color: var(--kx-shell-text);
+  border: 1px solid var(--kx-search-line); border-right: 0; border-radius: var(--kx-radius) 0 0 var(--kx-radius);
+  font-size: var(--kx-text-md);
+}
+.kx-search__input::placeholder { color: var(--kx-search-text); opacity: 1; }
+.kx-search__btn {
+  flex: none; width: 52px; display: grid; place-items: center; cursor: pointer;
+  background: var(--kx-primary); color: var(--kx-on-primary);
+  border: 1px solid var(--kx-primary); border-radius: 0 var(--kx-radius) var(--kx-radius) 0;
+}
+.kx-search__btn:hover { filter: brightness(.93); }
+
+/* ---------- Navegação horizontal (faixa clara) ---------- */
+.kx-nav { background: var(--kx-surface); border-bottom: 1px solid var(--kx-line); }
+.kx-nav__list { display: flex; align-items: stretch; gap: .25rem; list-style: none; margin: 0; padding-block: 0; }
+.kx-nav__list > li { position: relative; display: flex; }
+.kx-nav__link {
+  display: inline-flex; align-items: center; gap: .35rem; min-height: 46px; padding: 0 .9rem;
+  border: 0; border-bottom: 3px solid transparent; background: none; cursor: pointer;
+  font-family: var(--kx-font-body); font-size: var(--kx-text-sm); font-weight: 600; color: var(--kx-text); text-decoration: none; white-space: nowrap;
+}
+.kx-nav__link:hover { color: var(--kx-ink); background: var(--kx-hover); }
+.kx-nav__link.is-active { color: var(--kx-ink); border-bottom-color: var(--kx-primary); }
+.kx-nav__trigger[aria-expanded="true"] { background: var(--kx-hover); color: var(--kx-ink); }
+.kx-nav__trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+.kx-nav__panel {
+  position: absolute; top: 100%; left: 0; z-index: var(--kx-z-menu); min-width: 260px; list-style: none; margin: 0; padding: .4rem;
+  background: var(--kx-surface); border: 1px solid var(--kx-line-strong); border-radius: 0 0 var(--kx-radius-lg) var(--kx-radius-lg); box-shadow: var(--kx-shadow-high);
+}
+.kx-nav__panel[hidden] { display: none; }
+.kx-nav__sublink { display: grid; gap: .1rem; padding: .6rem .75rem; border-radius: var(--kx-radius); color: var(--kx-text); text-decoration: none; font-size: var(--kx-text-sm); font-weight: 600; }
+.kx-nav__sublink small { font-weight: 400; color: var(--kx-text-muted); font-size: var(--kx-text-xs); }
+.kx-nav__sublink:hover { background: var(--kx-surface-2); color: var(--kx-ink); }
+.kx-nav__sublink.active { background: var(--kx-surface-2); color: var(--kx-ink); }
+
+/* ---------- Gaveta móvel ---------- */
+.kx-drawer-nav { display: grid; gap: .5rem; }
+.kx-drawer-nav__title { margin: .5rem 0 .15rem; font-family: var(--kx-font-mono); font-size: var(--kx-text-xs); letter-spacing: .06em; text-transform: uppercase; color: var(--kx-text-muted); }
+.kx-drawer-nav__link { display: flex; align-items: center; min-height: var(--kx-touch); padding: 0 .75rem; border-radius: var(--kx-radius); color: var(--kx-text); text-decoration: none; font-weight: 600; }
+.kx-drawer-nav__link:hover { background: var(--kx-surface-2); }
+.kx-drawer-nav__link.active { background: var(--kx-surface-2); color: var(--kx-ink); box-shadow: inset 3px 0 0 var(--kx-primary); }
+
+/* ---------- Rodapé ---------- */
+.kx-footer { background: var(--kx-shell); color: var(--kx-shell-muted); margin-top: var(--kx-space-8); }
+.kx-footer__inner { display: grid; grid-template-columns: 1.4fr repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; padding-block: 2.5rem; }
+.kx-footer__brand p { margin: .9rem 0 0; font-size: var(--kx-text-sm); max-width: 38ch; }
+.kx-footer__title { margin: 0 0 .75rem; font-family: var(--kx-font-mono); font-size: var(--kx-text-xs); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--kx-shell-text); }
+.kx-footer__col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .1rem; }
+.kx-footer a { display: inline-flex; align-items: center; min-height: 32px; color: var(--kx-shell-muted); text-decoration: none; font-size: var(--kx-text-sm); }
+.kx-footer a:hover { color: var(--kx-shell-text); text-decoration: underline; }
+.kx-footer :focus-visible { outline-color: var(--kx-shell-text); }
+.kx-footer__legal { border-top: 1px solid var(--kx-shell-line); padding-block: 1rem; font-size: var(--kx-text-xs); }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .kx-nav { display: none; }                       /* a navegação vive na gaveta */
+  .kx-topbar__burger { display: grid; }
+  .kx-topbar__row { flex-wrap: wrap; row-gap: .5rem; }
+  .kx-topbar__logo { margin-right: auto; }
+  .kx-topbar__actions { margin-left: 0; }
+  .kx-search { order: 3; flex-basis: 100%; max-width: none; }   /* a pesquisa ocupa a linha de baixo */
+  .kx-topbar { position: static; }                 /* a barra deixa de ser fixa: poupa altura em ecrãs pequenos */
+  .kx-footer__inner { grid-template-columns: 1fr 1fr; }
+  .kx-footer__brand { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .kx-footer__inner { grid-template-columns: 1fr; }
+}

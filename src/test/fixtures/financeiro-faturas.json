@@ -1,0 +1,24 @@
+{
+ "kpis": {
+  "pendentes": 1,
+  "valorPendente": 2394000,
+  "aVencer7": 1,
+  "vencidas": 0,
+  "aprovadasMes": 5
+ },
+ "items": [
+  {
+   "id": "cdebddfa-caac-449d-94b9-5bf73708a90e",
+   "reference": "FAT-2026-00001",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "poReference": "PO-2026-00002",
+   "poId": "3ad0b9e0-ff95-406c-b597-e3830313fae9",
+   "amount": 2394000,
+   "currency": "AOA",
+   "status": "PENDENTE",
+   "issuedAt": "2026-10-21T10:41:49.331Z",
+   "dueAt": "2026-10-31T10:41:49.331Z",
+   "paidAt": null
+  }
+ ]
+}

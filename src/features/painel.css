@@ -1,0 +1,45 @@
+/* KIXIMA Marketplace — áreas de trabalho por perfil. Só lê tokens --kx-*. */
+.kx-cabeca-acoes { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--kx-space-4); flex-wrap: wrap; }
+.kx-cabeca-acoes__botoes { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+.kx-kpis { list-style: none; margin: 0 0 var(--kx-space-5); padding: 0; display: grid; gap: var(--kx-space-3); grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.kx-kpi { display: grid; gap: .2rem; padding: var(--kx-space-4); background: var(--kx-surface); border: 1px solid var(--kx-line); border-radius: var(--kx-radius-lg); border-left: 4px solid var(--kx-line-strong); }
+.kx-kpi--warning { border-left-color: var(--kx-warning); }
+.kx-kpi--danger { border-left-color: var(--kx-danger); }
+.kx-kpi--success { border-left-color: var(--kx-success); }
+.kx-kpi__rotulo { color: var(--kx-text-muted); font-size: var(--kx-text-sm); }
+.kx-kpi__valor { font-family: var(--kx-font-display); font-size: var(--kx-text-2xl); line-height: 1.15; overflow-wrap: anywhere; }
+.kx-kpi__nota { color: var(--kx-text-muted); font-size: var(--kx-text-xs); }
+
+.kx-bloco { padding: var(--kx-space-4); margin-bottom: var(--kx-space-5); }
+.kx-bloco__cabeca { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: var(--kx-space-3); }
+.kx-bloco__titulo { margin: 0; font-size: var(--kx-text-xl); }
+.kx-grade-2 { display: grid; gap: var(--kx-space-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); align-items: start; }
+.kx-grade-2 > .kx-bloco { margin-bottom: 0; }
+
+.kx-filtros-linha { display: flex; gap: .75rem; flex-wrap: wrap; align-items: flex-end; margin-bottom: var(--kx-space-4); }
+.kx-filtros-linha .kx-field { min-width: min(100%, 200px); }
+
+.kx-def { display: grid; gap: .5rem 1.5rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 0; }
+.kx-def dt { color: var(--kx-text-muted); font-size: var(--kx-text-xs); text-transform: uppercase; letter-spacing: .06em; }
+.kx-def dd { margin: 0; overflow-wrap: anywhere; }
+.kx-def > div { display: grid; gap: .1rem; }
+
+.kx-barras { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.kx-barras li { display: grid; grid-template-columns: minmax(70px, 110px) 1fr auto; gap: .75rem; align-items: center; font-size: var(--kx-text-sm); }
+.kx-barras__trilho { height: 10px; background: var(--kx-surface-2); border-radius: var(--kx-radius-pill); overflow: hidden; }
+.kx-barras__valor { display: block; height: 100%; min-width: 2px; background: var(--kx-accent-strong, var(--kx-accent)); border-radius: inherit; }
+
+.kx-linha-tempo { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.kx-linha-tempo li { display: grid; grid-template-columns: 10px 1fr; gap: .75rem; }
+.kx-linha-tempo li::before { content: ''; width: 10px; height: 10px; margin-top: .45em; border-radius: 50%; background: var(--kx-line-strong); }
+.kx-linha-tempo li[data-feito="true"]::before { background: var(--kx-success); }
+.kx-linha-tempo small { display: block; color: var(--kx-text-muted); }
+
+.kx-progresso { display: block; width: 100%; height: 8px; background: var(--kx-surface-2); border-radius: var(--kx-radius-pill); overflow: hidden; }
+.kx-progresso > span { display: block; height: 100%; background: var(--kx-success); }
+
+.kx-acoes-ordem { display: flex; gap: .5rem; flex-wrap: wrap; }
+.kx-nota-direitos { color: var(--kx-text-muted); font-size: var(--kx-text-sm); margin: 0; }
+.kx-requisicao-grupo { margin-bottom: var(--kx-space-4); }
+.kx-quant { width: 5.5rem; }

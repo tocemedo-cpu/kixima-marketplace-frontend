@@ -1,0 +1,77 @@
+{
+ "kpis": {
+  "minhasTarefas": 2,
+  "aguardando": 1,
+  "concluidas": 1,
+  "atrasadas": 1,
+  "emAndamento": 1
+ },
+ "items": [
+  {
+   "relatedTo": "PO-2026-00007",
+   "poId": "f22af773-61df-45b5-95e8-aee69b872d77",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.370Z",
+   "type": "DIVERGENCIA",
+   "title": "Resolver Divergência",
+   "desc": "Analisar divergência na recepção de itens.",
+   "status": "ATRASADA",
+   "priority": "ALTA"
+  },
+  {
+   "relatedTo": "PO-2026-00006",
+   "poId": "5493d89b-5a2a-4963-9caa-7980dc747eb0",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.361Z",
+   "type": "CONCLUIDA",
+   "title": "Ordem concluída",
+   "desc": "Recepção confirmada com sucesso.",
+   "status": "CONCLUIDA",
+   "priority": "BAIXA"
+  },
+  {
+   "relatedTo": "PO-2026-00005",
+   "poId": "481b8680-4232-4377-994f-8ba1d69bdff2",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.354Z",
+   "type": "RECEBER",
+   "title": "Confirmar Recepção",
+   "desc": "Confirmar a recepção dos itens entregues.",
+   "status": "AGUARDANDO",
+   "priority": "MEDIA"
+  },
+  {
+   "relatedTo": "PO-2026-00004",
+   "poId": "7d2b7048-503d-40ea-8d30-40451bffab9f",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.345Z",
+   "type": "ENTREGA",
+   "title": "Acompanhar Entrega",
+   "desc": "Verificar o estado da entrega em andamento.",
+   "status": "EM_ANDAMENTO",
+   "priority": "MEDIA"
+  },
+  {
+   "relatedTo": "PO-2026-00002",
+   "poId": "3ad0b9e0-ff95-406c-b597-e3830313fae9",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.329Z",
+   "type": "PAGAR",
+   "title": "Autorizar Pagamento",
+   "desc": "Rever e autorizar o pagamento da fatura.",
+   "status": "PENDENTE",
+   "priority": "ALTA"
+  },
+  {
+   "relatedTo": "PO-2026-00001",
+   "poId": "60e8c945-de4b-46ac-9e51-ce893e85144d",
+   "supplier": "Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.323Z",
+   "type": "APROVAR",
+   "title": "Aprovar Ordem de Compra",
+   "desc": "Rever e aprovar a PO antes do envio ao fornecedor.",
+   "status": "PENDENTE",
+   "priority": "ALTA"
+  }
+ ]
+}

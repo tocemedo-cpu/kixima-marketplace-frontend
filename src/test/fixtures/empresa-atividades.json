@@ -1,0 +1,99 @@
+{
+ "kpis": {
+  "total": 8,
+  "concluidas": 2,
+  "pendentes": 2,
+  "andamento": 2,
+  "atrasadas": 2
+ },
+ "items": [
+  {
+   "title": "PO PO-2026-00008",
+   "poStatus": "REJEITADA",
+   "module": "Ordens de Compra",
+   "type": "Rejeição",
+   "status": "ATRASADA",
+   "relatedTo": "PO-2026-00008",
+   "party": "Fornecedora Industrial Kianda, Lda",
+   "responsavel": "Ana Comprador",
+   "at": "2026-10-28T10:41:49.378Z"
+  },
+  {
+   "title": "PO PO-2026-00007",
+   "poStatus": "RECEBIDA_COM_DIVERGENCIA",
+   "module": "Recepção",
+   "type": "Divergência",
+   "status": "ATRASADA",
+   "relatedTo": "PO-2026-00007",
+   "party": "Fornecedora Industrial Kianda, Lda",
+   "responsavel": "Ana Comprador",
+   "at": "2026-10-28T10:41:49.370Z"
+  },
+  {
+   "title": "PO PO-2026-00006",
+   "poStatus": "RECEBIDA_CONFORME",
+   "module": "Recepção",
+   "type": "Conclusão",
+   "status": "CONCLUIDA",
+   "relatedTo": "PO-2026-00006",
+   "party": "Fornecedora Industrial Kianda, Lda",
+   "responsavel": "Ana Comprador",
+   "at": "2026-10-28T10:41:49.361Z"
+  },
+  {
+   "title": "PO PO-2026-00005",
+   "poStatus": "ENTREGUE",
+   "module": "Entregas",
+   "type": "Acompanhamento",
+   "status": "ANDAMENTO",
+   "relatedTo": "PO-2026-00005",
+   "party": "Fornecedora Industrial Kianda, Lda",
+   "responsavel": "Ana Comprador",
+   "at": "2026-10-28T10:41:49.354Z"
+  },
+  {
+   "title": "PO PO-2026-00004",
+   "poStatus": "EM_EXECUCAO",
+   "module": "Entregas",
+   "type": "Acompanhamento",
+   "status": "ANDAMENTO",
+   "relatedTo": "PO-2026-00004",
+   "party": "Fornecedora Industrial Kianda, Lda",
+   "responsavel": "Ana Comprador",
+   "at": "2026-10-28T10:41:49.345Z"
+  },
+  {
+   "title": "PO PO-2026-00003",
+   "poStatus": "PAGA",
+   "module": "Financeiro",
+   "type": "Financeiro",
+   "status": "CONCLUIDA",
+   "relatedTo": "PO-2026-00003",
+   "party": "Fornecedora Industrial Kianda, Lda",
+   "responsavel": "Ana Comprador",
+   "at": "2026-10-28T10:41:49.336Z"
+  },
+  {
+   "title": "PO PO-2026-00002",
+   "poStatus": "AGUARDANDO_PAGAMENTO",
+   "module": "Financeiro",
+   "type": "Financeiro",
+   "status": "PENDENTE",
+   "relatedTo": "PO-2026-00002",
+   "party": "Fornecedora Industrial Kianda, Lda",
+   "responsavel": "Ana Comprador",
+   "at": "2026-10-28T10:41:49.329Z"
+  },
+  {
+   "title": "PO PO-2026-00001",
+   "poStatus": "AGUARDANDO_APROVACAO",
+   "module": "Ordens de Compra",
+   "type": "Aprovação",
+   "status": "PENDENTE",
+   "relatedTo": "PO-2026-00001",
+   "party": "Fornecedora Industrial Kianda, Lda",
+   "responsavel": "Ana Comprador",
+   "at": "2026-10-28T10:41:49.323Z"
+  }
+ ]
+}

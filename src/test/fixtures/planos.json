@@ -1,0 +1,94 @@
+{
+  "planos": [
+    {
+      "plano": "BASE",
+      "preco": {
+        "valorUsd": 100,
+        "periodo": "TRIMESTRAL",
+        "meses": 3,
+        "porMesUsd": 33.33
+      },
+      "features": {
+        "itensNoCatalogo": null,
+        "posicaoNaPesquisa": 0,
+        "selo": false,
+        "lugaresIncluidos": 2,
+        "kits": false,
+        "carregamentoEmMassa": false,
+        "documentosPorItem": 1,
+        "imagensPorItem": 3,
+        "cotacoesPorMes": 3,
+        "historicoRelatoriosMeses": 3,
+        "frameworkContracts": false,
+        "erpIntegration": false,
+        "relatorioConteudoLocal": false,
+        "apiCatalogo": false,
+        "supplierComparison": true,
+        "auditTrail": true,
+        "categoryManagement": false
+      }
+    },
+    {
+      "plano": "CORE",
+      "preco": {
+        "valorUsd": 100,
+        "periodo": "MENSAL",
+        "meses": 1,
+        "porMesUsd": 100
+      },
+      "features": {
+        "itensNoCatalogo": null,
+        "posicaoNaPesquisa": 1,
+        "selo": false,
+        "lugaresIncluidos": 5,
+        "kits": true,
+        "carregamentoEmMassa": false,
+        "documentosPorItem": 3,
+        "imagensPorItem": 10,
+        "cotacoesPorMes": 20,
+        "historicoRelatoriosMeses": 12,
+        "frameworkContracts": false,
+        "erpIntegration": false,
+        "relatorioConteudoLocal": false,
+        "apiCatalogo": false,
+        "supplierComparison": true,
+        "auditTrail": true,
+        "categoryManagement": false
+      }
+    },
+    {
+      "plano": "PRO",
+      "preco": {
+        "valorUsd": 5000,
+        "periodo": "ANUAL",
+        "meses": 12,
+        "porMesUsd": 416.67
+      },
+      "features": {
+        "itensNoCatalogo": null,
+        "posicaoNaPesquisa": 2,
+        "selo": true,
+        "lugaresIncluidos": null,
+        "kits": true,
+        "carregamentoEmMassa": true,
+        "documentosPorItem": 6,
+        "imagensPorItem": 10,
+        "cotacoesPorMes": null,
+        "historicoRelatoriosMeses": null,
+        "frameworkContracts": true,
+        "erpIntegration": true,
+        "relatorioConteudoLocal": true,
+        "apiCatalogo": true,
+        "supplierComparison": true,
+        "auditTrail": true,
+        "categoryManagement": true
+      }
+    }
+  ],
+  "taxaPorTransacao": {
+    "porOrdemUsd": 8,
+    "porFaturaUsd": 15,
+    "limiarUsd": 11500,
+    "percentagemAcima": 0.002
+  }
+}

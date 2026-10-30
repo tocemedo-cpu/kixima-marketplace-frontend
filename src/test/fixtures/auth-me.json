@@ -1,0 +1,17 @@
+{
+  "user": {
+    "id": "2d697b96-a281-4137-aa51-9bbccdd521aa",
+    "role": "COMPRADOR",
+    "adminAreas": [],
+    "companyId": "eb5307c8-598d-4e90-8911-66b3f822048a",
+    "companyType": "CLIENTE",
+    "companyPlan": "CORE",
+    "approvalCap": null,
+    "name": "Ana Comprador",
+    "email": "comprador@petroangola.co.ao",
+    "avatarUrl": null,
+    "mfaPendente": false,
+    "mfaRestrita": false,
+    "mfaPrazo": null
+  }
+}

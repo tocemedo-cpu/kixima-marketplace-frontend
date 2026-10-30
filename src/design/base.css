@@ -1,0 +1,90 @@
+/* KIXIMA Marketplace — base: reset mínimo, tipografia, foco e utilitários. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--kx-bg);
+  color: var(--kx-text);
+  font-family: var(--kx-font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 var(--kx-space-3);
+  font-family: var(--kx-font-display);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.2;
+  color: var(--kx-ink);
+  text-wrap: balance;
+}
+h1 { font-size: var(--kx-text-3xl); }
+h2 { font-size: var(--kx-text-2xl); }
+h3 { font-size: var(--kx-text-xl); }
+h4 { font-size: var(--kx-text-lg); }
+
+p { margin: 0 0 var(--kx-space-3); max-width: 70ch; }
+
+a { color: var(--kx-brand); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+img, svg { max-width: 100%; }
+img { display: block; }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+code, kbd, .kx-mono { font-family: var(--kx-font-mono); font-size: .92em; }
+
+/* Foco visível em tudo o que é interactivo: anel escuro/claro (contraste >= 3:1 nos três fundos). */
+:focus-visible {
+  outline: 2px solid var(--kx-focus);
+  outline-offset: 2px;
+  border-radius: var(--kx-radius-sm);
+}
+
+/* Contentor de página */
+.kx-container {
+  width: 100%;
+  max-width: calc(var(--kx-container) + 2 * var(--kx-gutter));
+  margin-inline: auto;
+  padding-inline: var(--kx-gutter);
+}
+
+/* Só para leitores de ecrã */
+.kx-sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* Fio Samakaka — a assinatura da marca, sempre com 4px de altura */
+.kx-fio {
+  display: block;
+  height: 4px;
+  background: var(--kx-samakaka);
+  background-size: auto 4px;
+  background-repeat: repeat-x;
+}
+
+/* "Saltar para o conteúdo" — primeiro elemento focável da página */
+.kx-skip {
+  position: absolute; left: var(--kx-space-3); top: -100px; z-index: var(--kx-z-toast);
+  background: var(--kx-surface); color: var(--kx-ink); padding: var(--kx-space-2) var(--kx-space-4);
+  border: 2px solid var(--kx-focus); border-radius: var(--kx-radius);
+}
+.kx-skip:focus { top: var(--kx-space-3); }
+
+/* Quem pede menos movimento não vê animações (nem transições) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

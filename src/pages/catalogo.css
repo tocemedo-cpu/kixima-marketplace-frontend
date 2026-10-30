@@ -1,0 +1,32 @@
+/* Catálogo de componentes — só o enquadramento da página; os componentes têm os seus estilos em ui/ui.css. */
+.cat { padding-block: var(--kx-space-5) var(--kx-space-6); }
+.cat-hero { margin-block: var(--kx-space-5) var(--kx-space-6); }
+.cat-hero p { color: var(--kx-text-muted); font-size: var(--kx-text-lg); }
+.cat-secao { margin-top: var(--kx-space-7); scroll-margin-top: calc(var(--kx-topbar-h) + 64px); }
+.cat-secao > h2 { padding-bottom: var(--kx-space-2); border-bottom: 1px solid var(--kx-line); }
+.cat-secao__desc { color: var(--kx-text-muted); }
+.cat-grid { display: grid; gap: var(--kx-space-4); align-items: start; }
+.cat-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cat-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cat-span { grid-column: 1 / -1; }
+.cat-linha { display: flex; flex-wrap: wrap; align-items: center; gap: var(--kx-space-3); }
+.cat-pilha { display: flex; flex-direction: column; align-items: flex-start; gap: var(--kx-space-3); }
+.cat-pilha > .kx-alert, .cat-pilha > .kx-table-wrap, .cat-pilha > .kx-pagination { width: 100%; }
+.cat-marca { display: grid; place-items: center; min-height: 140px; border-radius: var(--kx-radius-lg); }
+.cat-marca--escuro { background: var(--kx-shell); }
+.cat-fio-demo { margin-top: var(--kx-space-4); border-radius: 2px; overflow: hidden; }
+.cat-cores { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: var(--kx-space-3); list-style: none; margin: 0; padding: 0; }
+.cat-cores li { display: grid; gap: .15rem; font-size: var(--kx-text-sm); }
+.cat-cor { display: block; height: 56px; border-radius: var(--kx-radius); border: 1px solid var(--kx-line-strong); }
+.cat-cor__nome { font-weight: 600; color: var(--kx-ink); }
+.cat-cores code { color: var(--kx-text-muted); font-size: var(--kx-text-xs); }
+.cat-icones { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: var(--kx-space-3); list-style: none; margin: 0; padding: 0; }
+.cat-icones li { display: grid; justify-items: center; gap: .35rem; padding: var(--kx-space-3); border: 1px solid var(--kx-line); border-radius: var(--kx-radius); background: var(--kx-surface); color: var(--kx-ink); }
+.cat-icones code { font-size: var(--kx-text-xs); color: var(--kx-text-muted); }
+
+@media (max-width: 900px) {
+  .cat-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .cat-grid--2, .cat-grid--3 { grid-template-columns: 1fr; }
+}

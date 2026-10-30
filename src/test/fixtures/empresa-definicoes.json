@@ -1,0 +1,8 @@
+{
+ "aprovacaoObrigatoria": true,
+ "assinaturaDigital": false,
+ "historicoAlteracoes": true,
+ "backupAutomatico": true,
+ "lembretesPrazos": true,
+ "valoresSemImpostos": false
+}

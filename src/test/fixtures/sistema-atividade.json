@@ -1,0 +1,242 @@
+{
+ "kpis": {
+  "empresas": 5,
+  "utilizadores": 8,
+  "ordens": 8,
+  "pagamentos": 5,
+  "tickets": 6
+ },
+ "items": [
+  {
+   "type": "Empresa",
+   "module": "Credenciamento",
+   "title": "Empresa Teste E2E 696855",
+   "detail": "Empresa cliente — estado pendente",
+   "at": "2026-10-30T08:58:17.103Z"
+  },
+  {
+   "type": "Utilizador",
+   "module": "Contas",
+   "title": "Admin Teste",
+   "detail": "Novo company admin — Empresa Teste E2E 696855",
+   "at": "2026-10-30T08:58:17.103Z"
+  },
+  {
+   "type": "Empresa",
+   "module": "Credenciamento",
+   "title": "Empresa Teste E2E 684731",
+   "detail": "Empresa cliente — estado pendente",
+   "at": "2026-10-30T08:41:25.053Z"
+  },
+  {
+   "type": "Utilizador",
+   "module": "Contas",
+   "title": "Admin Teste",
+   "detail": "Novo company admin — Empresa Teste E2E 684731",
+   "at": "2026-10-30T08:41:25.053Z"
+  },
+  {
+   "type": "Empresa",
+   "module": "Credenciamento",
+   "title": "Empresa Teste E2E 647098",
+   "detail": "Empresa cliente — estado pendente",
+   "at": "2026-10-30T08:40:47.439Z"
+  },
+  {
+   "type": "Utilizador",
+   "module": "Contas",
+   "title": "Admin Teste",
+   "detail": "Novo company admin — Empresa Teste E2E 647098",
+   "at": "2026-10-30T08:40:47.439Z"
+  },
+  {
+   "type": "Suporte",
+   "module": "Ajuda",
+   "title": "#SUP-2026-00001",
+   "detail": "Dúvida sobre call-off",
+   "at": "2026-10-28T10:41:49.385Z"
+  },
+  {
+   "type": "Ordem de Compra",
+   "module": "Compras",
+   "title": "PO PO-2026-00008",
+   "detail": "rejeitada — Petro Angola Operações, Lda → Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.378Z"
+  },
+  {
+   "type": "Ordem de Compra",
+   "module": "Compras",
+   "title": "PO PO-2026-00007",
+   "detail": "recebida com divergencia — Petro Angola Operações, Lda → Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.370Z"
+  },
+  {
+   "type": "Ordem de Compra",
+   "module": "Compras",
+   "title": "PO PO-2026-00006",
+   "detail": "recebida conforme — Petro Angola Operações, Lda → Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.361Z"
+  },
+  {
+   "type": "Ordem de Compra",
+   "module": "Compras",
+   "title": "PO PO-2026-00005",
+   "detail": "entregue — Petro Angola Operações, Lda → Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.354Z"
+  },
+  {
+   "type": "Ordem de Compra",
+   "module": "Compras",
+   "title": "PO PO-2026-00004",
+   "detail": "em execucao — Petro Angola Operações, Lda → Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.345Z"
+  },
+  {
+   "type": "Ordem de Compra",
+   "module": "Compras",
+   "title": "PO PO-2026-00003",
+   "detail": "paga — Petro Angola Operações, Lda → Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.336Z"
+  },
+  {
+   "type": "Ordem de Compra",
+   "module": "Compras",
+   "title": "PO PO-2026-00002",
+   "detail": "aguardando pagamento — Petro Angola Operações, Lda → Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.329Z"
+  },
+  {
+   "type": "Ordem de Compra",
+   "module": "Compras",
+   "title": "PO PO-2026-00001",
+   "detail": "aguardando aprovacao — Petro Angola Operações, Lda → Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.323Z"
+  },
+  {
+   "type": "Apólice",
+   "module": "Seguros",
+   "title": "FOR-KIX-2026-001",
+   "detail": "ENSA Seguros — Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.256Z"
+  },
+  {
+   "type": "Utilizador",
+   "module": "Contas",
+   "title": "Bruno Company Admin",
+   "detail": "Novo company admin — Petro Angola Operações, Lda",
+   "at": "2026-10-28T10:41:49.242Z"
+  },
+  {
+   "type": "Utilizador",
+   "module": "Contas",
+   "title": "Admin KIXIMA",
+   "detail": "Novo admin sistema — —",
+   "at": "2026-10-28T10:41:49.242Z"
+  },
+  {
+   "type": "Utilizador",
+   "module": "Contas",
+   "title": "Ana Comprador",
+   "detail": "Novo comprador — Petro Angola Operações, Lda",
+   "at": "2026-10-28T10:41:49.242Z"
+  },
+  {
+   "type": "Utilizador",
+   "module": "Contas",
+   "title": "Duarte Fornecedor",
+   "detail": "Novo fornecedor — Fornecedora Industrial Kianda, Lda",
+   "at": "2026-10-28T10:41:49.242Z"
+  },
+  {
+   "type": "Utilizador",
+   "module": "Contas",
+   "title": "Carla Financeiro",
+   "detail": "Novo financeiro — Petro Angola Operações, Lda",
+   "at": "2026-10-28T10:41:49.242Z"
+  },
+  {
+   "type": "Empresa",
+   "module": "Credenciamento",
+   "title": "Fornecedora Industrial Kianda, Lda",
+   "detail": "Empresa fornecedor — estado aprovada",
+   "at": "2026-10-28T10:41:49.237Z"
+  },
+  {
+   "type": "Empresa",
+   "module": "Credenciamento",
+   "title": "Petro Angola Operações, Lda",
+   "detail": "Empresa cliente — estado aprovada",
+   "at": "2026-10-28T10:41:49.229Z"
+  },
+  {
+   "type": "Suporte",
+   "module": "Ajuda",
+   "title": "#SUP-2026-00002",
+   "detail": "Problema ao anexar documentos",
+   "at": "2026-10-27T10:41:49.385Z"
+  },
+  {
+   "type": "Suporte",
+   "module": "Ajuda",
+   "title": "#SUP-2026-00006",
+   "detail": "Pagamento em atraso",
+   "at": "2026-10-26T10:41:49.385Z"
+  },
+  {
+   "type": "Suporte",
+   "module": "Ajuda",
+   "title": "#SUP-2026-00005",
+   "detail": "Adicionar novo utilizador",
+   "at": "2026-10-25T10:41:49.385Z"
+  },
+  {
+   "type": "Suporte",
+   "module": "Ajuda",
+   "title": "#SUP-2026-00003",
+   "detail": "Falha ao criar fatura",
+   "at": "2026-10-24T10:41:49.385Z"
+  },
+  {
+   "type": "Pagamento",
+   "module": "Financeiro",
+   "title": "PAY-2026-00006",
+   "detail": "Pagamento processado",
+   "at": "2026-10-23T10:41:49.375Z"
+  },
+  {
+   "type": "Pagamento",
+   "module": "Financeiro",
+   "title": "PAY-2026-00005",
+   "detail": "Pagamento processado",
+   "at": "2026-10-23T10:41:49.367Z"
+  },
+  {
+   "type": "Pagamento",
+   "module": "Financeiro",
+   "title": "PAY-2026-00004",
+   "detail": "Pagamento processado",
+   "at": "2026-10-23T10:41:49.359Z"
+  },
+  {
+   "type": "Pagamento",
+   "module": "Financeiro",
+   "title": "PAY-2026-00003",
+   "detail": "Pagamento processado",
+   "at": "2026-10-23T10:41:49.351Z"
+  },
+  {
+   "type": "Pagamento",
+   "module": "Financeiro",
+   "title": "PAY-2026-00002",
+   "detail": "Pagamento processado",
+   "at": "2026-10-23T10:41:49.341Z"
+  },
+  {
+   "type": "Suporte",
+   "module": "Ajuda",
+   "title": "#SUP-2026-00004",
+   "detail": "Acesso ao relatório comercial",
+   "at": "2026-10-22T10:41:49.385Z"
+  }
+ ]
+}

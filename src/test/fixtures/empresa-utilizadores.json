@@ -1,0 +1,26 @@
+[
+ {
+  "id": "f6f69573-e169-468e-800d-de81e9134817",
+  "name": "Carla Financeiro",
+  "email": "financeiro@petroangola.co.ao",
+  "role": "FINANCEIRO",
+  "active": true,
+  "createdAt": "2026-10-28T10:41:49.242Z"
+ },
+ {
+  "id": "aa86e49c-db67-4c99-9501-ea3112b0a7e3",
+  "name": "Bruno Company Admin",
+  "email": "admin@petroangola.co.ao",
+  "role": "COMPANY_ADMIN",
+  "active": true,
+  "createdAt": "2026-10-28T10:41:49.242Z"
+ },
+ {
+  "id": "2d697b96-a281-4137-aa51-9bbccdd521aa",
+  "name": "Ana Comprador",
+  "email": "comprador@petroangola.co.ao",
+  "role": "COMPRADOR",
+  "active": true,
+  "createdAt": "2026-10-28T10:41:49.242Z"
+ }
+]

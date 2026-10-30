@@ -1,0 +1,136 @@
+{
+ "kpis": {
+  "emTransito": 1,
+  "emPreparacao": 1,
+  "entregues": 3,
+  "canceladas": 1
+ },
+ "items": [
+  {
+   "id": "47033239-605f-41cc-bc53-96b3dc9ba3fa",
+   "reference": "PO-2026-00008",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "itemsCount": 1,
+   "emittedAt": "2026-10-18T10:41:49.377Z",
+   "dispatchedAt": null,
+   "deliveredAt": null,
+   "stage": "CANCELADA",
+   "label": "Cancelada",
+   "progress": 0,
+   "location": "Luanda, Angola"
+  },
+  {
+   "id": "f22af773-61df-45b5-95e8-aee69b872d77",
+   "reference": "PO-2026-00007",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "itemsCount": 2,
+   "emittedAt": "2026-10-18T10:41:49.370Z",
+   "dispatchedAt": "2026-10-24T10:41:49.370Z",
+   "deliveredAt": "2026-10-26T10:41:49.370Z",
+   "stage": "ENTREGUE",
+   "label": "Entregue",
+   "progress": 100,
+   "location": "Luanda, Angola"
+  },
+  {
+   "id": "5493d89b-5a2a-4963-9caa-7980dc747eb0",
+   "reference": "PO-2026-00006",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "itemsCount": 1,
+   "emittedAt": "2026-10-18T10:41:49.361Z",
+   "dispatchedAt": "2026-10-24T10:41:49.361Z",
+   "deliveredAt": "2026-10-26T10:41:49.361Z",
+   "stage": "ENTREGUE",
+   "label": "Entregue",
+   "progress": 100,
+   "location": "Luanda, Angola"
+  },
+  {
+   "id": "481b8680-4232-4377-994f-8ba1d69bdff2",
+   "reference": "PO-2026-00005",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "itemsCount": 1,
+   "emittedAt": "2026-10-18T10:41:49.353Z",
+   "dispatchedAt": "2026-10-24T10:41:49.353Z",
+   "deliveredAt": "2026-10-26T10:41:49.353Z",
+   "stage": "ENTREGUE",
+   "label": "Entregue",
+   "progress": 100,
+   "location": "Luanda, Angola"
+  },
+  {
+   "id": "7d2b7048-503d-40ea-8d30-40451bffab9f",
+   "reference": "PO-2026-00004",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "itemsCount": 3,
+   "emittedAt": "2026-10-18T10:41:49.344Z",
+   "dispatchedAt": "2026-10-24T10:41:49.344Z",
+   "deliveredAt": null,
+   "stage": "EM_TRANSITO",
+   "label": "Em Trânsito",
+   "progress": 75,
+   "location": "Luanda, Angola"
+  },
+  {
+   "id": "eee77687-ee6b-4455-8efc-6e6f03fe6d71",
+   "reference": "PO-2026-00003",
+   "supplier": {
+    "id": "a7fbd3d9-cca8-42a3-8724-fc8d62e66427",
+    "name": "Fornecedora Industrial Kianda, Lda",
+    "logoUrl": null,
+    "verified": true,
+    "city": "Luanda",
+    "province": "Luanda",
+    "country": "Angola"
+   },
+   "itemsCount": 5,
+   "emittedAt": "2026-10-18T10:41:49.335Z",
+   "dispatchedAt": null,
+   "deliveredAt": null,
+   "stage": "EM_PREPARACAO",
+   "label": "Em Preparação",
+   "progress": 30,
+   "location": "Luanda, Angola"
+  }
+ ]
+}
