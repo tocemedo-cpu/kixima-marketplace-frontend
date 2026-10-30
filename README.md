@@ -81,7 +81,8 @@ Contra o backend Java local lembre-se de o arrancar com o perfil `dev` (`SPRING_
 fica restrito como em produção. Não há segredos nem credenciais neste repositório.
 
 **Produção:** a sessão é um cookie `httpOnly`, por isso o frontend é servido na MESMA origem da API. O repositório traz o
-`Dockerfile`, o nginx (`deploy/`) e o `render.yaml` para o Render com o backend Java na VPS: ver
+`Dockerfile`, o nginx (`deploy/`) e o `render.yaml`. Fase atual, **tudo no Render** (frontend + backend Java privado): ver
+[`docs/DEPLOY-RENDER.md`](docs/DEPLOY-RENDER.md). Backend na VPS (fase seguinte):
 [`docs/DEPLOY-RENDER-VPS.md`](docs/DEPLOY-RENDER-VPS.md). O backend precisa de `APP_URL`/`CORS_ORIGINS` com o domínio real. As imagens do catálogo (`/catalog/*.jpg`, referenciadas pela base de dados)
 vivem em `public/catalog/` e são servidas pelo próprio frontend.
 

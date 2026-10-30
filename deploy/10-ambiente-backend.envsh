@@ -1,0 +1,49 @@
+# Lido (sourced) pelo entrypoint da imagem nginx ANTES do envsubst: valida e deriva as variáveis do backend.
+# Falha cedo e com uma mensagem clara, em vez de arrancar um site que só dá 503.
+#
+# Dois modos:
+#   1) Rede privada do Render (fase "só Render"):  BACKEND_HOSTPORT=kixima-backend:10000
+#      -> BACKEND_ORIGIN=http://kixima-backend:10000. O backend é um serviço privado: não tem endereço público e a rede
+#         interna do Render não passa pela internet, por isso aqui não há TLS nem segredo partilhado.
+#   2) Origem externa (VPS ou outro host):  BACKEND_ORIGIN=https://origem.exemplo.ao  e  BACKEND_HOST=origem.exemplo.ao
+#      -> o tráfego atravessa a internet: https:// é obrigatório.
+
+if [ -n "$BACKEND_HOSTPORT" ]; then
+  case "$BACKEND_HOSTPORT" in
+    */*|*://*) echo "ERRO: BACKEND_HOSTPORT deve ser só host:porta (ex.: kixima-backend:10000)." >&2; exit 1 ;;
+  esac
+  export BACKEND_ORIGIN="http://$BACKEND_HOSTPORT"
+  export BACKEND_HOST="${BACKEND_HOSTPORT%%:*}"
+  echo "Backend na rede privada do Render: $BACKEND_ORIGIN" >&2
+else
+  if [ -z "$BACKEND_ORIGIN" ] || [ -z "$BACKEND_HOST" ]; then
+    echo "ERRO: defina BACKEND_HOSTPORT (rede privada do Render) ou BACKEND_ORIGIN + BACKEND_HOST (origem externa)." >&2
+    exit 1
+  fi
+  case "$BACKEND_ORIGIN" in
+    https://*) ;;
+    http://127.0.0.1*|http://localhost*) echo "AVISO: BACKEND_ORIGIN sem TLS (só aceitável em testes locais)." >&2 ;;
+    *) echo "ERRO: BACKEND_ORIGIN tem de começar por https:// (o tráfego atravessa a internet)." >&2; exit 1 ;;
+  esac
+  case "$BACKEND_ORIGIN" in */) echo "ERRO: BACKEND_ORIGIN não pode acabar em barra." >&2; exit 1 ;; esac
+fi
+
+# DNS: o nginx resolve o nome do backend em cada pedido (para sobreviver a um redeploy do backend). Tem de usar o DNS do
+# PRÓPRIO contentor (os resolvedores públicos não conhecem os nomes da rede privada do Render). O resolvedor do nginx não
+# aplica o domínio de pesquisa (search) do resolv.conf; por isso um nome curto, como kixima-backend, é completado aqui.
+RESOLV="${RESOLV_CONF:-/etc/resolv.conf}"
+NGINX_LOCAL_RESOLVERS="$(awk 'BEGIN{ORS=" "} $1=="nameserver" { if ($2 ~ /:/) print "[" $2 "]"; else print $2 }' "$RESOLV" 2>/dev/null | sed 's/ *$//')"
+[ -z "$NGINX_LOCAL_RESOLVERS" ] && NGINX_LOCAL_RESOLVERS="1.1.1.1 8.8.8.8"
+export NGINX_LOCAL_RESOLVERS
+if [ -n "$BACKEND_HOSTPORT" ]; then
+  case "$BACKEND_HOST" in
+    *.*) ;;
+    *)
+      DOMINIO="$(awk '$1=="search" { print $2; exit }' "$RESOLV" 2>/dev/null)"
+      if [ -n "$DOMINIO" ]; then
+        export BACKEND_ORIGIN="http://${BACKEND_HOST}.${DOMINIO}:${BACKEND_HOSTPORT#*:}"
+        export BACKEND_HOST="${BACKEND_HOST}.${DOMINIO}"
+        echo "Nome completo do backend: $BACKEND_ORIGIN" >&2
+      fi ;;
+  esac
+fi

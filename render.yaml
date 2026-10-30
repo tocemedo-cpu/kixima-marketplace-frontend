@@ -1,18 +1,75 @@
-# Blueprint do Render: um serviço Web (Docker) que serve o frontend e encaminha /api e /ws para o backend na VPS.
-# Domínio, certificado e HTTPS são do Render. Os valores marcados sync:false pedem-se no painel (não ficam no repositório).
+# KIXIMA Marketplace — Blueprint do Render, FASE ATUAL: tudo no Render (sem VPS).
+#
+#   Browser ──https──▶ kixima-marketplace (web, nginx) ──rede privada──▶ kixima-backend (serviço privado, Java)
+#
+# - kixima-marketplace: serve o frontend e encaminha /api e /ws para o backend. É o único serviço com endereço público,
+#   por isso o cookie de sessão (httpOnly, Secure) fica na mesma origem e não há CORS.
+# - kixima-backend: o backend Java do repositório kixima-backend-java (usa o Dockerfile dele). É um serviço PRIVADO: só
+#   o frontend o alcança, pela rede interna do Render (não passa pela internet).
+# Os valores marcados sync:false pedem-se no painel (segredos e dados da sua conta; nunca ficam no repositório).
+# O Render precisa de acesso GitHub aos DOIS repositórios. Guia: docs/DEPLOY-RENDER.md
 services:
+  - type: pserv
+    name: kixima-backend
+    runtime: docker
+    repo: https://github.com/tocemedo-cpu/kixima-backend-java
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    region: frankfurt                 # as duas peças na MESMA região (a rede privada não atravessa regiões)
+    plan: starter                     # serviços privados não existem no plano gratuito; o Java precisa de ≥512 MB
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: PORT
+        value: "10000"
+      - key: JAVA_TOOL_OPTIONS        # a JVM respeita o limite de memória do contentor
+        value: "-XX:MaxRAMPercentage=70 -XX:+UseSerialGC"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 1d
+      - key: APP_URL                  # o domínio público, ex.: https://marketplace.exemplo.ao (links dos emails)
+        sync: false
+      - key: CORS_ORIGINS             # o mesmo domínio público
+        sync: false
+      - key: DATABASE_URL_JDBC        # jdbc:postgresql://<host>:5432/<base>  (ver docs/DEPLOY-RENDER.md)
+        sync: false
+      - key: DATABASE_USER
+        sync: false
+      - key: DATABASE_PASSWORD
+        sync: false
+      - key: STORAGE_PROVIDER         # em produção o backend exige armazenamento S3 (comprovativos, documentos, imagens)
+        value: s3
+      - key: STORAGE_BUCKET
+        sync: false
+      - key: STORAGE_ACCESS_KEY
+        sync: false
+      - key: STORAGE_SECRET_KEY
+        sync: false
+      - key: STORAGE_ENDPOINT         # vazio = AWS; Supabase Storage / R2 / MinIO precisam do seu endpoint S3
+        sync: false
+      - key: STORAGE_REGION
+        sync: false
+      - key: EMAIL_PROVIDER           # o Render bloqueia o SMTP de saída: use a API HTTP do Brevo
+        value: brevo
+      - key: EMAIL_FROM
+        sync: false
+      - key: BREVO_API_KEY
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO
+
   - type: web
     name: kixima-marketplace
     runtime: docker
+    region: frankfurt
     plan: starter
     healthCheckPath: /healthz
     autoDeploy: true
     envVars:
-      - key: BACKEND_ORIGIN      # origem HTTPS do backend na VPS, sem barra final (ex.: https://origem.exemplo.ao)
-        sync: false
-      - key: BACKEND_HOST        # só o nome de máquina dessa origem (ex.: origem.exemplo.ao)
-        sync: false
-      - key: ORIGEM_SEGREDO      # segredo partilhado com o proxy da VPS (gere um valor longo e aleatório)
-        sync: false
-      - key: REAL_IP_EXTRA       # opcional: CIDR extra de proxy de confiança (ver docs/DEPLOY-RENDER-VPS.md)
-        value: 127.0.0.1
+      - key: BACKEND_HOSTPORT         # host:porta interno do backend, preenchido pelo Render
+        fromService:
+          type: pserv
+          name: kixima-backend
+          property: hostport

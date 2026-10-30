@@ -1,4 +1,6 @@
-# Implantação: frontend no Render + backend Java na VPS, no mesmo domínio
+# Implantação (fase seguinte, opcional): frontend no Render + backend Java na VPS, no mesmo domínio
+
+> **A fase atual é só Render:** ver [`DEPLOY-RENDER.md`](DEPLOY-RENDER.md). Este guia aplica-se quando o backend passar para a VPS.
 
 ```
 Browser ──https──▶ Render (marketplace.exemplo.ao) ──▶ nginx (Docker) ──https──▶ VPS (origem.exemplo.ao) ──▶ Java :4001
@@ -81,8 +83,8 @@ do Render), além do segredo.
 
 ## 3. Render
 
-1. **New → Blueprint** apontando para o repositório `kixima-marketplace-frontend` (usa o `render.yaml`), ou **New → Web Service**
-   com *Runtime: Docker* e *Health Check Path* `/healthz`.
+1. **New → Web Service** apontando para o repositório `kixima-marketplace-frontend` com *Runtime: Docker* e *Health Check Path*
+   `/healthz` (ou use o `render.yaml` depois de apagar o serviço `kixima-backend` e de trocar `BACKEND_HOSTPORT` pelas variáveis abaixo).
 2. Variáveis de ambiente do serviço:
 
 | Variável | Exemplo | Notas |
@@ -92,7 +94,7 @@ do Render), além do segredo.
 | `ORIGEM_SEGREDO` | valor longo e aleatório | o mesmo que no nginx da VPS; gere com `openssl rand -hex 32` |
 | `REAL_IP_EXTRA` | `127.0.0.1` | só altere se o passo 5.3 o pedir |
 
-   Sem `BACKEND_ORIGIN`/`BACKEND_HOST` o contentor recusa-se a arrancar com uma mensagem clara; com `http://` também.
+   Sem `BACKEND_ORIGIN`/`BACKEND_HOST` (e sem `BACKEND_HOSTPORT`) o contentor recusa-se a arrancar com uma mensagem clara; com `http://` também.
 3. **Settings → Custom Domains**: adicione `marketplace.exemplo.ao` e crie o registo DNS que o Render indicar. O HTTPS é do Render.
 
 ## 4. O que o nginx do Render faz

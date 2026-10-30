@@ -8,6 +8,7 @@
 #   BACKEND_ORIGIN  origem HTTPS do backend na VPS, sem barra final (ex.: https://origem.exemplo.ao)
 #   BACKEND_HOST    nome de máquina dessa origem (usado no SNI e na validação do certificado TLS)
 #   REAL_IP_EXTRA   um endereço/CIDR extra de proxy de confiança (omissão 127.0.0.1)
+#   NGINX_LOCAL_RESOLVERS  servidores DNS do contentor (derivados de /etc/resolv.conf pelo ficheiro deploy/10-ambiente-backend.envsh)
 #   ORIGEM_SEGREDO  segredo partilhado com o proxy da VPS (cabeçalho X-Origem-Segredo); vazio = não envia
 
 # Registo com o IP real (após o módulo realip) e o X-Forwarded-For que o Render enviou: serve para confirmar, nos logs do
@@ -26,7 +27,7 @@ server {
   server_tokens off;
   access_log /dev/stdout kixima;
   client_max_body_size 25m;          # comprovativos (≤10 MB) e documentos de registo
-  resolver 1.1.1.1 8.8.8.8 valid=30s ipv6=off;   # o nome do backend é resolvido em cada pedido, não só no arranque
+  resolver ${NGINX_LOCAL_RESOLVERS} valid=30s ipv6=off;   # DNS do contentor (nomes da rede privada); o backend é resolvido em cada pedido
 
   # IP REAL do cliente. O limitador de pedidos do backend usa o ÚLTIMO salto de X-Forwarded-For: sem isto todos os
   # utilizadores partilhariam o IP do Render e esgotariam o limite juntos. Os proxies privados à frente deste nginx são
