@@ -1,0 +1,18 @@
+# Blueprint do Render: um serviço Web (Docker) que serve o frontend e encaminha /api e /ws para o backend na VPS.
+# Domínio, certificado e HTTPS são do Render. Os valores marcados sync:false pedem-se no painel (não ficam no repositório).
+services:
+  - type: web
+    name: kixima-marketplace
+    runtime: docker
+    plan: starter
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: BACKEND_ORIGIN      # origem HTTPS do backend na VPS, sem barra final (ex.: https://origem.exemplo.ao)
+        sync: false
+      - key: BACKEND_HOST        # só o nome de máquina dessa origem (ex.: origem.exemplo.ao)
+        sync: false
+      - key: ORIGEM_SEGREDO      # segredo partilhado com o proxy da VPS (gere um valor longo e aleatório)
+        sync: false
+      - key: REAL_IP_EXTRA       # opcional: CIDR extra de proxy de confiança (ver docs/DEPLOY-RENDER-VPS.md)
+        value: 127.0.0.1

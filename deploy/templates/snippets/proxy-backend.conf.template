@@ -1,0 +1,17 @@
+# Cabeçalhos e TLS comuns a tudo o que vai para o backend Java na VPS.
+proxy_http_version 1.1;
+proxy_set_header Host $host;                         # o domínio público, não o da origem
+proxy_set_header X-Real-IP $remote_addr;             # já é o IP real do cliente (módulo realip)
+proxy_set_header X-Forwarded-For $remote_addr;       # UM só endereço: o backend usa o último salto
+proxy_set_header X-Forwarded-Proto $proto_original;
+proxy_set_header X-Forwarded-Host $host;
+# Prova à VPS de que o pedido veio deste nginx (e não de alguém a falar diretamente com a origem). Vazio = não envia.
+proxy_set_header X-Origem-Segredo "${ORIGEM_SEGREDO}";
+# O tráfego Render → VPS atravessa a internet: TLS obrigatório e certificado validado (sem validação, qualquer
+# intermediário podia ler cookies e comprovativos).
+proxy_ssl_server_name on;
+proxy_ssl_name ${BACKEND_HOST};
+proxy_ssl_verify on;
+proxy_ssl_verify_depth 3;
+proxy_ssl_trusted_certificate /etc/ssl/certs/ca-certificates.crt;
+proxy_connect_timeout 10s;

@@ -80,9 +80,9 @@ API_PROXY_TARGET=http://192.168.1.20:4001 npm run dev
 Contra o backend Java local lembre-se de o arrancar com o perfil `dev` (`SPRING_PROFILES_ACTIVE=dev`), senão o CORS
 fica restrito como em produção. Não há segredos nem credenciais neste repositório.
 
-**Produção:** a sessão é um cookie `httpOnly`, por isso o frontend deve ser servido na MESMA origem da API (ou atrás de
-um proxy que encaminhe `/api` e `/ws` para o backend, como o `nginx.conf` do frontend original), e o backend precisa de
-`APP_URL`/`CORS_ORIGINS` com o domínio real. As imagens do catálogo (`/catalog/*.jpg`, referenciadas pela base de dados)
+**Produção:** a sessão é um cookie `httpOnly`, por isso o frontend é servido na MESMA origem da API. O repositório traz o
+`Dockerfile`, o nginx (`deploy/`) e o `render.yaml` para o Render com o backend Java na VPS: ver
+[`docs/DEPLOY-RENDER-VPS.md`](docs/DEPLOY-RENDER-VPS.md). O backend precisa de `APP_URL`/`CORS_ORIGINS` com o domínio real. As imagens do catálogo (`/catalog/*.jpg`, referenciadas pela base de dados)
 vivem em `public/catalog/` e são servidas pelo próprio frontend.
 
 ## Estrutura

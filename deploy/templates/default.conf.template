@@ -1,0 +1,113 @@
+# KIXIMA Marketplace — nginx do serviço Web no Render (mesma origem para o frontend e a API).
+#
+#   Browser ──https──▶ Render (domínio KIXIMA) ──▶ este nginx ──https──▶ backend Java na VPS
+#
+# Serve o build do frontend (fallback de SPA) e encaminha /api e /ws para o backend, para que o cookie de sessão
+# (httpOnly, SameSite=Lax, Secure) funcione sem CORS. Variáveis (substituídas no arranque pelo envsubst da imagem):
+#   PORT            porta em que o Render espera o serviço (o Render define-a; omissão 10000)
+#   BACKEND_ORIGIN  origem HTTPS do backend na VPS, sem barra final (ex.: https://origem.exemplo.ao)
+#   BACKEND_HOST    nome de máquina dessa origem (usado no SNI e na validação do certificado TLS)
+#   REAL_IP_EXTRA   um endereço/CIDR extra de proxy de confiança (omissão 127.0.0.1)
+#   ORIGEM_SEGREDO  segredo partilhado com o proxy da VPS (cabeçalho X-Origem-Segredo); vazio = não envia
+
+# Registo com o IP real (após o módulo realip) e o X-Forwarded-For que o Render enviou: serve para confirmar, nos logs do
+# Render, como o IP do cliente chega (ver docs/DEPLOY-RENDER-VPS.md). O segredo nunca é registado.
+log_format kixima '$remote_addr xff="$http_x_forwarded_for" host=$host "$request" $status $body_bytes_sent';
+
+map $http_upgrade $connection_upgrade { default upgrade; '' close; }
+# O Render termina o TLS e põe o protocolo original em X-Forwarded-Proto.
+map $http_x_forwarded_proto $proto_original { default $http_x_forwarded_proto; '' $scheme; }
+
+server {
+  listen ${PORT};
+  server_name _;
+  root /usr/share/nginx/html;
+  index index.html;
+  server_tokens off;
+  access_log /dev/stdout kixima;
+  client_max_body_size 25m;          # comprovativos (≤10 MB) e documentos de registo
+  resolver 1.1.1.1 8.8.8.8 valid=30s ipv6=off;   # o nome do backend é resolvido em cada pedido, não só no arranque
+
+  # IP REAL do cliente. O limitador de pedidos do backend usa o ÚLTIMO salto de X-Forwarded-For: sem isto todos os
+  # utilizadores partilhariam o IP do Render e esgotariam o limite juntos. Os proxies privados à frente deste nginx são
+  # de confiança; o primeiro endereço público, da direita para a esquerda, é o cliente (um X-Forwarded-For forjado pelo
+  # cliente fica à esquerda e é ignorado).
+  set_real_ip_from 10.0.0.0/8;
+  set_real_ip_from 172.16.0.0/12;
+  set_real_ip_from 192.168.0.0/16;
+  set_real_ip_from 127.0.0.0/8;
+  set_real_ip_from fc00::/7;
+  set_real_ip_from ${REAL_IP_EXTRA};
+  real_ip_header X-Forwarded-For;
+  real_ip_recursive on;
+
+  gzip on;
+  gzip_comp_level 5;
+  gzip_min_length 512;
+  gzip_vary on;
+  gzip_types text/css application/javascript application/json image/svg+xml text/plain;
+
+  include /etc/nginx/conf.d/snippets/seguranca.conf;
+
+  # Saúde do próprio serviço (healthcheck do Render) e do caminho até ao backend (diagnóstico).
+  location = /healthz { access_log off; default_type text/plain; return 200 "ok\n"; }
+
+  location = /backend-health {
+    include /etc/nginx/conf.d/snippets/proxy-backend.conf;
+    set $backend "${BACKEND_ORIGIN}";
+    proxy_pass $backend/ready;
+  }
+
+  # API -> backend Java (o URI original segue tal como chegou).
+  location /api/ {
+    include /etc/nginx/conf.d/snippets/proxy-backend.conf;
+    set $backend "${BACKEND_ORIGIN}";
+    proxy_pass $backend;
+    proxy_read_timeout 60s;
+    # Backend em baixo: o frontend já sabe tratar 503 com mensagem e "Tentar de novo".
+    error_page 502 503 504 = @api_indisponivel;
+  }
+  location @api_indisponivel {
+    include /etc/nginx/conf.d/snippets/seguranca.conf;
+    default_type application/json;
+    return 503 '{"error":{"code":"SERVICO_INDISPONIVEL","message":"O servidor não está disponível neste momento. Tente de novo dentro de instantes."}}';
+  }
+
+  # Tempo real (STOMP sobre WebSocket). Sem Upgrade/Connection o handshake nunca acontece.
+  location /ws {
+    include /etc/nginx/conf.d/snippets/proxy-backend.conf;
+    set $backend "${BACKEND_ORIGIN}";
+    proxy_pass $backend;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 3600s;        # a ligação fica aberta; sem isto fecha aos 60 s
+  }
+
+  # Ficheiros com hash no nome: cache longa. Se faltar um, 404 (nunca index.html disfarçado de JavaScript).
+  location ^~ /assets/ {
+    include /etc/nginx/conf.d/snippets/seguranca.conf;
+    add_header Cache-Control "public, max-age=31536000, immutable" always;
+    try_files $uri =404;
+  }
+
+  # Fotografias do catálogo (referenciadas pela base de dados como /catalog/x.jpg).
+  location ^~ /catalog/ {
+    include /etc/nginx/conf.d/snippets/seguranca.conf;
+    add_header Cache-Control "public, max-age=604800" always;
+    try_files $uri =404;
+  }
+
+  # Ficheiros estáticos sem hash (tema-init.js, favicon): validar sempre.
+  location ~* \.(js|png|ico|svg|webmanifest|txt)$ {
+    include /etc/nginx/conf.d/snippets/seguranca.conf;
+    add_header Cache-Control "no-cache" always;
+    try_files $uri =404;
+  }
+
+  # Fallback de SPA: qualquer rota do React devolve o index.html, que nunca fica em cache.
+  location / {
+    include /etc/nginx/conf.d/snippets/seguranca.conf;
+    add_header Cache-Control "no-cache" always;
+    try_files $uri $uri/ /index.html;
+  }
+}
